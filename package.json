@@ -13,6 +13,7 @@
   "author": "Yang Chan Woo <oizys18@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.1",
     "@chakra-ui/react": "^1.7.1",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
