@@ -1,7 +1,7 @@
 import { Image, Container, Box, Heading } from '@chakra-ui/react'
 const Page = () => {
   return (
-    <Container>
+    <Container maxW="container.md">
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
