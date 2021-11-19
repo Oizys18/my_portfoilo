@@ -8,8 +8,8 @@ const Main = ({ children, router }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>양찬우 :: Oizys18</title>
       </Head>
-      <Navbar path={router.asPath} />
-      <Container maxW="container.lg" pt={14}>
+      {/* <Navbar path={router.asPath} /> */}
+      <Container maxW="container.lg" pt={14} height="100vh">
         {children}
       </Container>
     </Box>
