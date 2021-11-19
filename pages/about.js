@@ -7,9 +7,18 @@ const DynamicTerminal = dynamic(() => import('../lib/Terminal'), {
 
 const About = () => {
   return (
-    <Container maxW="container.lg" mt={50}>
-      <DynamicTerminal />
-    </Container>
+    <Box
+      bgColor="black"
+      position="absolute"
+      bottom={0}
+      width="100%"
+      left={0}
+      height="50%"
+    >
+      <Box position="relative" width="100%" mt={10} left={0}>
+        <DynamicTerminal />
+      </Box>
+    </Box>
   )
 }
 export default About

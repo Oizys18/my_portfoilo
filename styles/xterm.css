@@ -36,7 +36,7 @@
  */
 
 .xterm {
-  padding: 8px;
+  padding: 16px 8px 8px 8px;
   font-feature-settings: 'liga' 0;
   position: relative;
   user-select: none;
@@ -102,7 +102,7 @@
   overflow-y: hidden;
   cursor: default;
   position: absolute;
-  border-radius: 8px;
+  border-radius: 5px;
   right: 0;
   left: 0;
   top: 0;
