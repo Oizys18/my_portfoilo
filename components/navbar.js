@@ -5,6 +5,7 @@ import {
   Link,
   Stack,
   Heading,
+  Button,
   Flex,
   Menu,
   MenuItem,
@@ -31,9 +32,7 @@ const LinkItem = ({ href, path, children }) => {
   )
 }
 
-const Navbar = props => {
-  const { path } = props
-
+const Navbar = ({ path, drawerController }) => {
   return (
     <Box
       position="fixed"
@@ -42,7 +41,7 @@ const Navbar = props => {
       bg={useColorModeValue('#ffffff40', '#20202380')}
       style={{ backgroundFilter: 'blur(10px)' }}
       zIndex={1}
-      {...props}
+      // {...props}
     >
       <Container
         display="flex"
@@ -79,6 +78,7 @@ const Navbar = props => {
           <Link p={2} href="https://oizys.tistory.com/" target="_blank">
             DevBlog
           </Link>
+          <Button onClick={drawerController}>Terminal</Button>
         </Stack>
         <Box flex={1} align="right">
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
@@ -111,6 +111,9 @@ const Navbar = props => {
                   path={path}
                 >
                   DevBlog
+                </MenuItem>
+                <MenuItem>
+                  <Button onClick={drawerController}>Terminal</Button>
                 </MenuItem>
               </MenuList>
             </Menu>
