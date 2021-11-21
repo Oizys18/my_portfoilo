@@ -46,10 +46,10 @@ const Navbar = ({ path, drawerController }) => {
       <Container
         display="flex"
         p={2}
-        maxW="container.md"
+        maxW="container.xl"
         wrap="wrap"
         align="center"
-        justify="space-between"
+        justify="flex-end"
       >
         <Flex align="center" mr={5}>
           <Heading as="h1" size="lg" letterSpacing={'tighter'}>
@@ -77,13 +77,14 @@ const Navbar = ({ path, drawerController }) => {
           </Link>
           <Button onClick={drawerController}>Terminal</Button>
         </Stack>
-        <Box flex={1} align="right">
+        <Box flex={1} align="">
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu>
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
                 variant="outline"
+                right
                 aria-label="Options"
               />
               <MenuList>
