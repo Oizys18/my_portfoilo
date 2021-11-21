@@ -2,6 +2,7 @@ import { ChakraProvider } from '@chakra-ui/provider'
 import Layout from '../components/layouts/main'
 import theme from '../lib/theme'
 import '../styles/xterm.css'
+
 const Website = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider theme={theme}>
