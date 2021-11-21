@@ -16,7 +16,6 @@ const Main = ({ children, router }) => {
         <title>양찬우 :: Oizys18</title>
       </Head>
       <Navbar path={router.asPath} drawerController={onOpen} />
-
       <Drawer isOpen={isOpen} onClose={onClose}>
         <DynamicTerminal />
       </Drawer>

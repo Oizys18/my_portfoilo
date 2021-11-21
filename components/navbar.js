@@ -69,9 +69,6 @@ const Navbar = ({ path, drawerController }) => {
           <LinkItem href="/about" path={path}>
             About
           </LinkItem>
-          <LinkItem href="/works" path={path}>
-            Works
-          </LinkItem>
           <Link p={2} href="https://github.com/Oizys18" target="_blank">
             Github
           </Link>
@@ -92,9 +89,6 @@ const Navbar = ({ path, drawerController }) => {
               <MenuList>
                 <NextLink href="/about" passHref>
                   <MenuItem as={Link}>About</MenuItem>
-                </NextLink>
-                <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>Works</MenuItem>
                 </NextLink>
                 <MenuItem
                   as={Link}

@@ -1,13 +1,4 @@
-import {
-  Drawer,
-  Button,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton
-} from '@chakra-ui/react'
+import { Drawer, DrawerOverlay, DrawerContent } from '@chakra-ui/react'
 
 const CustomDrawer = ({ placement = 'bottom', isOpen, onClose, children }) => {
   return (
