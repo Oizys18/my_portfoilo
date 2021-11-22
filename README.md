@@ -22,3 +22,14 @@
 - 프로젝트 경험 소개
 - 토이프로젝트 경험 소개
 - chanuCLI 개발 경험을 살려 Fake Terminal 구현
+
+## 개발 중 이슈
+
+- xterm backspace issue
+- xterm importing -> Dynamic importing & useEffect hook
+- xterm chrome android double input
+-
+
+## 회고
+
+- 개발 완료 후 업데이트 예정!
