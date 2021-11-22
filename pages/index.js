@@ -11,7 +11,7 @@ const Page = () => {
       <Box display={{ md: 'flex' }}>
         <Box
           flexGrow={1}
-          bgColor={useColorModeValue('grey', 'black')}
+          bgColor={useColorModeValue('black', 'grey')}
           borderRadius={8}
           p={5}
           mt={10}
