@@ -5,7 +5,8 @@ const OpenTerminalButton = ({ onClick }) => {
   return (
     <IconButton
       onClick={onClick}
-      aria-label="Open Terminal"
+      aria-label="Toggle Terminal"
+      colorScheme="red"
       icon={<ChatIcon />}
     />
   )

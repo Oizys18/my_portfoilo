@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Navbar from '../navbar'
-import Drawer from '../drawer'
+import Navbar from '../Navbar'
+import Drawer from '../Drawer'
 import { Box, Container, useDisclosure } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
-const DynamicTerminal = dynamic(() => import('../../lib/terminal'), {
+const DynamicTerminal = dynamic(() => import('../../lib/Terminal'), {
   ssr: false
 })
 const Main = ({ children, router }) => {
