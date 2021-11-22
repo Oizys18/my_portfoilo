@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Navbar from '../navbar'
-import Drawer from '../Drawer'
+import Drawer from '../drawer'
 import { Box, Container, useDisclosure } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
-const DynamicTerminal = dynamic(() => import('../../lib/Terminal'), {
+const DynamicTerminal = dynamic(() => import('../../lib/terminal'), {
   ssr: false
 })
 const Main = ({ children, router }) => {
@@ -17,7 +17,7 @@ const Main = ({ children, router }) => {
       </Head>
       <Navbar path={router.asPath} drawerController={onOpen} />
       <Drawer isOpen={isOpen} onClose={onClose}>
-        <DynamicTerminal />
+        <DynamicTerminal closeTerminal={onClose} />
       </Drawer>
 
       <Container maxW="container.lg" pt={14}>

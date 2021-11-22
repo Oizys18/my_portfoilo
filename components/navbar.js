@@ -40,7 +40,6 @@ const Navbar = ({ path, drawerController }) => {
       as="nav"
       w="100%"
       bg={useColorModeValue('#ffffff40', '#20202380')}
-      // style={{ backgroundFilter: 'blur(10px)' }}
       zIndex={1}
     >
       <Container
@@ -81,24 +80,17 @@ const Navbar = ({ path, drawerController }) => {
           mt={{ base: 4, nmd: 0 }}
         >
           <ThemeToggleButton />
-          <OpenTerminalButton onClick={drawerController} />
+          <OpenTerminalButton onOpen={drawerController} />
         </Stack>
-        {/* <Box
-          flex={1}
-          align="right"
-          display={{ base: 'inline-block', md: 'none' }}
-        >
-          <Box ml={2}> */}
         <Menu>
           <Stack
             justifyContent="right"
             display={{ base: 'flex', md: 'none' }}
             direction={{ base: 'row', md: 'none' }}
             width={{ base: 'full', md: 'auto' }}
-            // mt={{ base: 4, nmd: 0 }}
           >
             <ThemeToggleButton />
-            <OpenTerminalButton onClick={drawerController} />
+            <OpenTerminalButton onOpen={drawerController} />
             <MenuButton
               as={IconButton}
               icon={<HamburgerIcon />}
@@ -108,9 +100,6 @@ const Navbar = ({ path, drawerController }) => {
             />
           </Stack>
           <MenuList>
-            {/* <NextLink href="/about" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
-                </NextLink> */}
             <MenuItem
               as={Link}
               target="_blank"
@@ -129,8 +118,6 @@ const Navbar = ({ path, drawerController }) => {
             </MenuItem>
           </MenuList>
         </Menu>
-        {/* </Box> */}
-        {/* </Box> */}
       </Container>
     </Box>
   )
