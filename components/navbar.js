@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+// import NextLink from 'next/link'
 import {
   Container,
   Box,
@@ -16,22 +16,25 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from '../components/theme-toggle-button'
 import OpenTerminalButton from '../components/terminal-button'
+import Logo from './logo'
+import GithubIconButton from './github-button'
+import BlogIconButton from './blog-button'
 
-const LinkItem = ({ href, path, children }) => {
-  const active = path === href
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
-  return (
-    <NextLink href={href}>
-      <Link
-        p={2}
-        bg={active ? 'glassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
-      >
-        {children}
-      </Link>
-    </NextLink>
-  )
-}
+// const LinkItem = ({ href, path, children }) => {
+//   const active = path === href
+//   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+//   return (
+//     <NextLink href={href}>
+//       <Link
+//         p={2}
+//         bg={active ? 'glassTeal' : undefined}
+//         color={active ? '#202023' : inactiveColor}
+//       >
+//         {children}
+//       </Link>
+//     </NextLink>
+//   )
+// }
 
 const Navbar = ({ path, drawerController }) => {
   return (
@@ -45,16 +48,15 @@ const Navbar = ({ path, drawerController }) => {
       <Container
         display="flex"
         p={2}
-        maxW="100%"
+        maxW="container.lg"
         wrap="wrap"
-        align="center"
-        justify="flex-end"
+        justify="center"
       >
         <Flex align="center" mr={5}>
           <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-            <LinkItem href="/" path={path}>
-              YCW
-            </LinkItem>
+            <Link href="/" path={path}>
+              <Logo />
+            </Link>
           </Heading>
         </Flex>
         <Stack
@@ -65,15 +67,12 @@ const Navbar = ({ path, drawerController }) => {
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
-          <Link p={2} href="https://github.com/Oizys18" target="_blank">
-            Github
-          </Link>
-          <Link p={2} href="https://oizys.tistory.com/" target="_blank">
-            DevBlog
-          </Link>
+          <GithubIconButton />
+          <BlogIconButton />
         </Stack>
         <Stack
           align="right"
+          alignItems="center"
           direction={{ base: 'column', md: 'row' }}
           display={{ base: 'none', md: 'flex' }}
           width={{ base: 'full', md: 'auto' }}
@@ -84,6 +83,7 @@ const Navbar = ({ path, drawerController }) => {
         </Stack>
         <Menu>
           <Stack
+            alignItems="center"
             justifyContent="right"
             display={{ base: 'flex', md: 'none' }}
             direction={{ base: 'row', md: 'none' }}

@@ -8,7 +8,7 @@ import {
 const Page = () => {
   return (
     <Container maxW="container.md">
-      <Box display={{ md: 'flex' }}>
+      {/* <Box display={{ md: 'flex' }}>
         <Box
           flexGrow={1}
           bgColor={useColorModeValue('black', 'grey')}
@@ -33,7 +33,7 @@ const Page = () => {
           borderRadius="full"
           src="/images/profile.png"
         />
-      </Box>
+      </Box> */}
     </Container>
   )
 }

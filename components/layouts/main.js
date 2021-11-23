@@ -8,6 +8,7 @@ const DynamicTerminal = dynamic(() => import('../../lib/terminal'), {
 })
 const Main = ({ children, router }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isTerminalLoaded } = useDisclosure()
 
   return (
     <Box as="main" pb={8}>
@@ -15,9 +16,16 @@ const Main = ({ children, router }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>양찬우 :: Oizys18 Portfolio</title>
       </Head>
-      <Navbar path={router.asPath} drawerController={onOpen} />
+      <Navbar
+        path={router.asPath}
+        drawerController={onOpen}
+        isTerminalLoading={isTerminalLoaded}
+      />
       <Drawer isOpen={isOpen} onClose={onClose}>
-        <DynamicTerminal closeTerminal={onClose} />
+        <DynamicTerminal
+          closeTerminal={onClose}
+          isTerminalLoaded={isTerminalLoaded}
+        />
       </Drawer>
 
       <Container maxW="container.lg" pt={14}>
