@@ -1,4 +1,4 @@
-// import NextLink from 'next/link'
+import NextLink from 'next/link'
 import {
   Container,
   Box,
@@ -39,24 +39,26 @@ import BlogIconButton from './blog-button'
 const Navbar = ({ path, drawerController }) => {
   return (
     <Box
-      position="fixed"
+      pos="fixed"
       as="nav"
       w="100%"
       bg={useColorModeValue('#ffffff40', '#20202380')}
       zIndex={1}
     >
       <Container
-        display="flex"
         p={2}
+        display="flex"
         maxW="container.lg"
         wrap="wrap"
         justify="center"
       >
         <Flex align="center" mr={5}>
           <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-            <Link href="/" path={path}>
-              <Logo />
-            </Link>
+            <NextLink href="/">
+              <Link _hover={{ textDecoration: 'none' }}>
+                <Logo />
+              </Link>
+            </NextLink>
           </Heading>
         </Flex>
         <Stack

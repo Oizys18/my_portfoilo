@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Navbar from '../navbar'
 import Drawer from '../drawer'
-import { Box, Container, useDisclosure } from '@chakra-ui/react'
+import { Box, useDisclosure } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 const DynamicTerminal = dynamic(() => import('../../lib/terminal'), {
   ssr: false
@@ -11,9 +11,10 @@ const Main = ({ children, router }) => {
   const { isTerminalLoaded } = useDisclosure()
 
   return (
-    <Box as="main" pb={8}>
+    <Box as="main">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/public/favicon.ico" />
         <title>양찬우 :: Oizys18 Portfolio</title>
       </Head>
       <Navbar
@@ -27,10 +28,7 @@ const Main = ({ children, router }) => {
           isTerminalLoaded={isTerminalLoaded}
         />
       </Drawer>
-
-      <Container maxW="container.lg" pt={14}>
-        {children}
-      </Container>
+      <Box pt={14}>{children}</Box>
     </Box>
   )
 }

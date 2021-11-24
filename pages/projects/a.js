@@ -1,4 +1,5 @@
+import { Container } from '@chakra-ui/layout'
 const A = () => {
-  return <div>AAA</div>
+  return <Container>AAA</Container>
 }
 export default A

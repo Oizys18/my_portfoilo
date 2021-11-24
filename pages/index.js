@@ -1,10 +1,4 @@
-import {
-  Image,
-  Container,
-  Box,
-  Heading,
-  useColorModeValue
-} from '@chakra-ui/react'
+import { Container } from '@chakra-ui/react'
 const Page = () => {
   return (
     <Container maxW="container.md">
