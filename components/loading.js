@@ -26,7 +26,7 @@ const Loading = WrappedComponent => {
             alignItems="center"
             bgColor="black"
             opacity="0.8"
-            zIndex="3"
+            zIndex="10"
           >
             <Box
               as="div"
