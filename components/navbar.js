@@ -36,7 +36,7 @@ import BlogIconButton from './blog-button'
 //   )
 // }
 
-const Navbar = ({ path, drawerController }) => {
+const Navbar = ({ path, drawerController, isTerminalOpen }) => {
   return (
     <Box
       pos="fixed"
@@ -81,7 +81,10 @@ const Navbar = ({ path, drawerController }) => {
           mt={{ base: 4, nmd: 0 }}
         >
           <ThemeToggleButton />
-          <OpenTerminalButton onOpen={drawerController} />
+          <OpenTerminalButton
+            isOpen={isTerminalOpen}
+            onOpen={drawerController}
+          />
         </Stack>
         <Menu>
           <Stack

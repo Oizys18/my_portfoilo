@@ -21,6 +21,7 @@ const Main = ({ children, router }) => {
         path={router.asPath}
         drawerController={onOpen}
         isTerminalLoading={isTerminalLoaded}
+        isTerminalOpen={isOpen}
       />
       <Drawer isOpen={isOpen} onClose={onClose}>
         <DynamicTerminal

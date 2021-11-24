@@ -1,9 +1,10 @@
 import { IconButton } from '@chakra-ui/react'
 import { ChatIcon } from '@chakra-ui/icons'
 
-const OpenTerminalButton = ({ onOpen }) => {
+const OpenTerminalButton = ({ isOpen, onOpen }) => {
   return (
     <IconButton
+      isLoading={isOpen}
       onClick={onOpen}
       aria-label="Toggle Terminal"
       colorScheme="blue"
