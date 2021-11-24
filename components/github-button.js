@@ -10,7 +10,7 @@ const GithubIconButton = () => {
         w={8}
         h={8}
         as={DiGithubAlt}
-        transition="0.5s"
+        transition="0.3s"
         color={useColorModeValue('#00000050', '#ffffff50')}
         _hover={{ color: hoverColor }}
       />

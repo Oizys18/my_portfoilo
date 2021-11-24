@@ -10,7 +10,7 @@ const BlogIconButton = () => {
         w={6}
         h={6}
         as={FaBloggerB}
-        transition="0.5s"
+        transition="0.3s"
         color={useColorModeValue('#00000050', '#ffffff50')}
         _hover={{ color: hoverColor }}
       />

@@ -1,7 +1,17 @@
 import { Container, Box } from '@chakra-ui/react'
 const Page = () => {
   return (
-    <Container maxW="container.md">
+    <Container
+      maxW="container.md"
+      height="50vh"
+      p={3}
+      display="flex"
+      fontSize="3rem"
+      fontWeight="bold"
+      alignItems="center"
+      justifyContent="center"
+      flexDir="column"
+    >
       {/* <Box display={{ md: 'flex' }}>
         <Box
           flexGrow={1}
@@ -28,15 +38,7 @@ const Page = () => {
           src="/images/profile.png"
         />
       </Box> */}
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        fontSize="3rem"
-        p={3}
-      >
-        포트폴리오 임시대문
-      </Box>
+      <Box>포트폴리오 임시대문</Box>
       <Box
         display="flex"
         justifyContent="center"
@@ -45,7 +47,7 @@ const Page = () => {
         p={3}
         flexDir="column"
       >
-        <p>환영합니다. </p>
+        <p>환영합니다</p>
         <p>우측 상단 Terminal 사용하세요</p>
       </Box>
     </Container>
