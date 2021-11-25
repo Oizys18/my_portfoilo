@@ -50,7 +50,7 @@ const Page = () => {
             <Box aria-label="we-title">삼성청년SW아카데미 2기</Box>
             <Box aria-label="we-duration">(2019.07~2020.06)</Box>
           </Box>
-          <Box fontSize="sm">
+          <Box fontSize="sm" pt={{ base: 3, md: 0 }}>
             <p>컴퓨터 공학 및 웹 전반에 대한 학습</p>
             <p>약 1600시간의 알고리즘 및 팀프로젝트 개발경험</p>
             <p>리액트, 뷰 등의 js프레임워크를 이용한 웹개발 프로젝트 경험</p>
@@ -64,11 +64,7 @@ const Page = () => {
       </Container>
 
       <Container maxW="container.md" mt={3}>
-        <Box
-          display="flex"
-          flexDir={{ base: 'column', md: 'row' }}
-          // justifyContent="space-between"
-        >
+        <Box display="flex" flexDir={{ base: 'column', md: 'row' }}>
           <Box
             display="flex"
             flexDir="column"
@@ -80,7 +76,7 @@ const Page = () => {
             <Box aria-label="we-title">Django 공식문서 번역</Box>
             <Box aria-label="we-duration"></Box>
           </Box>
-          <Box fontSize="sm">
+          <Box fontSize="sm" pt={{ base: 3, md: 0 }}>
             <p>https://docs.djangoproject.com/</p>
             <p>Django 프레임워크 공식문서 로컬라이징 참여</p>
           </Box>
