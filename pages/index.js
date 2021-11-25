@@ -1,54 +1,23 @@
-import { Container, Box } from '@chakra-ui/react'
+import { Image, Container, Box } from '@chakra-ui/react'
 const Page = () => {
   return (
-    <Container
-      maxW="container.md"
-      height="50vh"
-      p={3}
-      display="flex"
-      fontSize="3rem"
-      fontWeight="bold"
-      alignItems="center"
-      justifyContent="center"
-      flexDir="column"
-    >
-      {/* <Box display={{ md: 'flex' }}>
-        <Box
-          flexGrow={1}
-          bgColor={useColorModeValue('black', 'grey')}
-          borderRadius={8}
-          p={5}
-          mt={10}
-        >
-          <Heading as="h2" variant="page-title">
-            양찬우
-          </Heading>
-          <p>성실한 긍정주의자 ( 개발자 / 작가 / 크리에이터 )</p>
-        </Box>
-      </Box>
-      <Box align="center" ml={{ md: 6 }} flexShrink={0}>
+    <Container maxW="container.md" mt={10}>
+      <Box align="left" ml={3} pos="absolute" top={100}>
         <Image
-          borderColor="whiteAlpha.800"
-          borderStyle="solid"
-          borderWidth={2}
-          display="inline-block"
-          maxWidth="150px"
-          alt="profile-image"
-          borderRadius="full"
+          borderRadius={5}
           src="/images/profile.png"
+          alt="profile-image"
+          height={150}
+          width={150}
         />
-      </Box> */}
-      <Box>포트폴리오 임시대문</Box>
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        fontSize="1.5rem"
-        p={3}
-        flexDir="column"
-      >
-        <p>환영합니다</p>
-        <p>우측 상단 Terminal 사용하세요</p>
+      </Box>
+      <Box bgColor="#003049" pb={10} mt={110} borderRadius={3} color="white">
+        <Box as="h2" fontSize="4xl" fontWeight="bold" pt={3} pl={170}>
+          양찬우
+        </Box>
+        <Container maxW="container.lg" pt={5}>
+          <Box>안녕하세요! 프론트엔드 개발자 양찬우입니다.</Box>
+        </Container>
       </Box>
     </Container>
   )

@@ -1,5 +1,14 @@
-import { useEffect } from 'react'
-import { Box, useColorModeValue } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
+import {
+  Box,
+  Container,
+  Slider,
+  SliderTrack,
+  SliderThumb,
+  SliderFilledTrack,
+  useColorModeValue
+} from '@chakra-ui/react'
+
 const Point = class {
   // 간격을 가진 좌표를 생성, 좌표의 Y값을 이동시키고
   // 각 좌표를 선으로 연결하는 것
@@ -62,7 +71,7 @@ const Tide = class {
       const cy = (prevY + this.points[i].y) / 2
 
       // 직선
-      // ctx.lineTo(cx, cy);
+      // ctx.lineTo(cx, cy)
 
       // 곡선
       ctx.quadraticCurveTo(prevX, prevY, cx, cy)
@@ -80,15 +89,9 @@ const Tide = class {
 }
 
 const WaveGroup = class {
-  constructor(themeColor) {
-    this.totalWaves = 5
-    this.totalPoints = 7
-    // this.color = [
-    //   'rgba(0,199,235,0.4)',
-    //   'rgba(0,146,199,0.4)',
-    //   'rgba(0,87,158,0.4)',
-    //   'rgba(30,45,102,0.6)'
-    // ]
+  constructor(themeColor, waveCount, pointCount) {
+    this.totalWaves = waveCount
+    this.totalPoints = pointCount
     this.color = themeColor
 
     this.waves = []
@@ -113,7 +116,7 @@ const WaveGroup = class {
 }
 
 const App = class {
-  constructor(themeColor) {
+  constructor(themeColor, tideCount, point) {
     // canvas 생성
     this.canvas = document.createElement('canvas')
     this.ctx = this.canvas.getContext('2d')
@@ -121,7 +124,7 @@ const App = class {
     waveCanvas.innerHTML = ''
     waveCanvas.appendChild(this.canvas)
 
-    this.waveGroup = new WaveGroup(themeColor)
+    this.waveGroup = new WaveGroup(themeColor, tideCount, point)
 
     // resize event
     window.addEventListener('resize', this.resize.bind(this), false)
@@ -153,32 +156,98 @@ const App = class {
 
 const Wave = () => {
   const lightColor = [
-    'rgba(0,199,235,0.4)',
-    'rgba(0,146,199,0.4)',
-    'rgba(0,87,158,0.4)',
-    'rgba(30,45,102,0.6)',
-    'rgba(30,45,102,0.6)'
+    '#002C3D99',
+    '#005F7399',
+    '#0A939699',
+    '#09848699',
+    '#94D2BD99',
+    '#E9D8A699',
+    '#E7D49D99',
+    '#EE9B0099',
+    '#CA670299',
+    '#B65C0299',
+    '#BB3E0399',
+    '#AE201299',
+    '#9B222699',
+    '#A61E1199',
+    '#97212599'
   ]
   const darkColor = [
-    '#003049CC',
-    '#D62828CC',
-    '#F77F00CC',
-    '#FCBF49CC',
-    '#EAE2B766'
+    '#00304999',
+    '#00304999',
+    '#00304999',
+    '#D6282899',
+    '#D6282899',
+    '#D6282899',
+    '#F77F0099',
+    '#F77F0099',
+    '#F77F0099',
+    '#FCBF4999',
+    '#FCBF4999',
+    '#FCBF4999',
+    '#EAE2B799',
+    '#EAE2B799',
+    '#EAE2B799'
   ]
   const themeColor = useColorModeValue(lightColor, darkColor)
+  const [waveCount, setWaveCount] = useState(5)
+  const [pointCount, setPointCount] = useState(7)
   useEffect(() => {
-    new App(themeColor)
-  }, [themeColor])
+    // useEffect to Clean-up when data change
+    new App(themeColor, waveCount, pointCount)
+  }, [themeColor, waveCount, pointCount])
+
   return (
-    <Box
-      id="wave-canvas"
-      width="100vw"
-      height="100vh"
-      pos="absolute"
-      top={0}
-      left={0}
-    />
+    <>
+      <Container mt={50} bgColor="transparent" align="center">
+        <Box>
+          <Box fontSize="lg" fontWeight="bold" pos="inline-block">
+            Wave
+          </Box>
+          <Slider
+            defaultValue={5}
+            min={3}
+            max={15}
+            step={1}
+            onChangeEnd={val => setWaveCount(val)}
+            zIndex={30}
+          >
+            <SliderTrack bg="red.100">
+              <Box position="relative" right={10} />
+              <SliderFilledTrack bg="tomato" />
+            </SliderTrack>
+            <SliderThumb boxSize={5} />
+          </Slider>
+        </Box>
+        <Box mt={5}>
+          <Box fontSize="lg" fontWeight="bold" pos="inline-block">
+            Point
+          </Box>
+          <Slider
+            defaultValue={7}
+            min={3}
+            max={15}
+            step={1}
+            onChangeEnd={val => setPointCount(val)}
+            zIndex={30}
+          >
+            <SliderTrack bg="red.100">
+              <Box position="relative" right={10} />
+              <SliderFilledTrack bg="tomato" />
+            </SliderTrack>
+            <SliderThumb boxSize={6} />
+          </Slider>
+        </Box>
+      </Container>
+      <Box
+        id="wave-canvas"
+        width="100vw"
+        height="100vh"
+        pos="absolute"
+        top={0}
+        left={0}
+      />
+    </>
   )
 }
 export default Wave
