@@ -20,29 +20,13 @@ import Logo from './logo'
 import GithubIconButton from './github-button'
 import BlogIconButton from './blog-button'
 
-// const LinkItem = ({ href, path, children }) => {
-//   const active = path === href
-//   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
-//   return (
-//     <NextLink href={href}>
-//       <Link
-//         p={2}
-//         bg={active ? 'glassTeal' : undefined}
-//         color={active ? '#202023' : inactiveColor}
-//       >
-//         {children}
-//       </Link>
-//     </NextLink>
-//   )
-// }
-
 const Navbar = ({ path, drawerController, isTerminalOpen }) => {
   return (
     <Box
       pos="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={useColorModeValue('#ffffff', '#202023')}
       zIndex={1}
     >
       <Container
