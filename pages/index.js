@@ -4,11 +4,11 @@ const Page = () => {
     <Container maxW="container.md" mt={10}>
       <Box align="left" ml={5} pos="absolute" top={100}>
         <Image
-          borderRadius={5}
-          src="/images/profile.png"
-          alt="profile-image"
-          height={150}
           width={150}
+          height={150}
+          borderRadius={5}
+          alt="profile-image"
+          src="/images/profile.png"
         />
       </Box>
       <Box

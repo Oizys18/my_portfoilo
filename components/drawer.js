@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import Loading from './loading'
 
 const CustomDrawer = ({
-  placement = 'bottom',
+  placement = 'top',
   isOpen,
   onClose,
   children,
