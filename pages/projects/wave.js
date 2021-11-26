@@ -132,6 +132,7 @@ const App = class {
 
     // animation 시작
     requestAnimationFrame(this.animate.bind(this))
+    this.clear()
   }
   resize() {
     this.stageWidth = document.body.clientWidth
@@ -147,10 +148,11 @@ const App = class {
   animate() {
     // canvas clear
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight)
-
     this.waveGroup.draw(this.ctx)
-
     requestAnimationFrame(this.animate.bind(this))
+  }
+  clear() {
+    this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight)
   }
 }
 
@@ -192,6 +194,7 @@ const Wave = () => {
   const themeColor = useColorModeValue(lightColor, darkColor)
   const [waveCount, setWaveCount] = useState(5)
   const [pointCount, setPointCount] = useState(7)
+
   useEffect(() => {
     // useEffect to Clean-up when data change
     new App(themeColor, waveCount, pointCount)
