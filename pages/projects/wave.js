@@ -93,7 +93,6 @@ const WaveGroup = class {
     this.totalWaves = waveCount
     this.totalPoints = pointCount
     this.color = themeColor
-
     this.waves = []
 
     for (let i = 0; i < this.totalWaves; i++) {
@@ -117,12 +116,17 @@ const WaveGroup = class {
 
 const App = class {
   constructor(themeColor, tideCount, point) {
-    // canvas 생성
-    this.canvas = document.createElement('canvas')
-    this.ctx = this.canvas.getContext('2d')
+    // canvas 생성 혹은 재활용
     const waveCanvas = document.getElementById('wave-canvas')
-    waveCanvas.innerHTML = ''
-    waveCanvas.appendChild(this.canvas)
+    if (!waveCanvas.hasChildNodes()) {
+      this.canvas = document.createElement('canvas')
+      this.ctx = this.canvas.getContext('2d')
+      waveCanvas.appendChild(this.canvas)
+    } else {
+      this.canvas = waveCanvas.firstElementChild
+      this.ctx = this.canvas.getContext('2d')
+      this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight)
+    }
 
     this.waveGroup = new WaveGroup(themeColor, tideCount, point)
 
@@ -132,7 +136,6 @@ const App = class {
 
     // animation 시작
     requestAnimationFrame(this.animate.bind(this))
-    this.clear()
   }
   resize() {
     this.stageWidth = document.body.clientWidth
@@ -141,18 +144,13 @@ const App = class {
     // canvas double size, retina 선명도
     this.canvas.width = this.stageWidth
     this.canvas.height = this.stageHeight
-    this.ctx.scale(1, 1)
 
     this.waveGroup.resize(this.stageWidth, this.stageHeight)
   }
   animate() {
-    // canvas clear
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight)
     this.waveGroup.draw(this.ctx)
     requestAnimationFrame(this.animate.bind(this))
-  }
-  clear() {
-    this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight)
   }
 }
 
@@ -192,7 +190,7 @@ const Wave = () => {
     '#EAE2B799'
   ]
   const themeColor = useColorModeValue(lightColor, darkColor)
-  const [waveCount, setWaveCount] = useState(5)
+  const [waveCount, setWaveCount] = useState(7)
   const [pointCount, setPointCount] = useState(7)
 
   useEffect(() => {
@@ -208,7 +206,7 @@ const Wave = () => {
             Wave
           </Box>
           <Slider
-            defaultValue={5}
+            defaultValue={waveCount}
             min={3}
             max={15}
             step={1}
@@ -219,7 +217,7 @@ const Wave = () => {
               <Box position="relative" right={10} />
               <SliderFilledTrack bg="tomato" />
             </SliderTrack>
-            <SliderThumb boxSize={5} />
+            <SliderThumb boxSize={5} bg="tomato" />
           </Slider>
         </Box>
         <Box mt={5}>
@@ -227,7 +225,7 @@ const Wave = () => {
             Point
           </Box>
           <Slider
-            defaultValue={7}
+            defaultValue={pointCount}
             min={3}
             max={15}
             step={1}
@@ -238,7 +236,7 @@ const Wave = () => {
               <Box position="relative" right={10} />
               <SliderFilledTrack bg="tomato" />
             </SliderTrack>
-            <SliderThumb boxSize={6} />
+            <SliderThumb boxSize={5} bg="tomato" />
           </Slider>
         </Box>
       </Container>
