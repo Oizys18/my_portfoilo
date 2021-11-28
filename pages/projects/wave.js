@@ -8,6 +8,117 @@ import {
   SliderFilledTrack,
   useColorModeValue
 } from '@chakra-ui/react'
+// import Toast from '../../components/Toast'
+// import useSessionStorage from '../../lib/useSessionStorage'
+
+const Wave = () => {
+  const lightColor = [
+    '#002C3D99',
+    '#005F7399',
+    '#0A939699',
+    '#09848699',
+    '#94D2BD99',
+    '#E9D8A699',
+    '#E7D49D99',
+    '#EE9B0099',
+    '#CA670299',
+    '#B65C0299',
+    '#BB3E0399',
+    '#AE201299',
+    '#9B222699',
+    '#A61E1199',
+    '#97212599'
+  ]
+  const darkColor = [
+    '#00304999',
+    '#00304999',
+    '#00304999',
+    '#D6282899',
+    '#D6282899',
+    '#D6282899',
+    '#F77F0099',
+    '#F77F0099',
+    '#F77F0099',
+    '#FCBF4999',
+    '#FCBF4999',
+    '#FCBF4999',
+    '#EAE2B799',
+    '#EAE2B799',
+    '#EAE2B799'
+  ]
+  const themeColor = useColorModeValue(lightColor, darkColor)
+  const [waveCount, setWaveCount] = useState(7)
+  const [pointCount, setPointCount] = useState(7)
+  // Toast({
+  //   id: 'wave-toast-achievement',
+  //   title: 'Wave 프로젝트 확인!',
+  //   description: '남은 도전과제 1/5'
+  // })
+  // Toast({
+  //   id: 'wave-toast',
+  //   title: ''
+  // })
+  // useSessionStorage('wave')
+
+  useEffect(() => {
+    // useEffect to Clean-up when data change
+    new App(themeColor, waveCount, pointCount)
+  }, [themeColor, waveCount, pointCount])
+
+  return (
+    <>
+      <Container mt={50} bgColor="transparent" align="center">
+        <Box>
+          <Box fontSize="lg" fontWeight="bold" pos="inline-block">
+            Wave
+          </Box>
+          <Slider
+            defaultValue={waveCount}
+            min={3}
+            max={15}
+            step={1}
+            onChangeEnd={val => setWaveCount(val)}
+            zIndex={30}
+          >
+            <SliderTrack bg="red.100">
+              <Box position="relative" right={10} />
+              <SliderFilledTrack bg="tomato" />
+            </SliderTrack>
+            <SliderThumb boxSize={5} bg="tomato" />
+          </Slider>
+        </Box>
+        <Box mt={5}>
+          <Box fontSize="lg" fontWeight="bold" pos="inline-block">
+            Point
+          </Box>
+          <Slider
+            defaultValue={pointCount}
+            min={3}
+            max={15}
+            step={1}
+            onChangeEnd={val => setPointCount(val)}
+            zIndex={30}
+          >
+            <SliderTrack bg="red.100">
+              <Box position="relative" right={10} />
+              <SliderFilledTrack bg="tomato" />
+            </SliderTrack>
+            <SliderThumb boxSize={5} bg="tomato" />
+          </Slider>
+        </Box>
+      </Container>
+      <Box
+        id="wave-canvas"
+        width="100vw"
+        height="100vh"
+        pos="absolute"
+        top={0}
+        left={0}
+      />
+    </>
+  )
+}
+export default Wave
 
 const Point = class {
   // 간격을 가진 좌표를 생성, 좌표의 Y값을 이동시키고
@@ -153,102 +264,3 @@ const App = class {
     requestAnimationFrame(this.animate.bind(this))
   }
 }
-
-const Wave = () => {
-  const lightColor = [
-    '#002C3D99',
-    '#005F7399',
-    '#0A939699',
-    '#09848699',
-    '#94D2BD99',
-    '#E9D8A699',
-    '#E7D49D99',
-    '#EE9B0099',
-    '#CA670299',
-    '#B65C0299',
-    '#BB3E0399',
-    '#AE201299',
-    '#9B222699',
-    '#A61E1199',
-    '#97212599'
-  ]
-  const darkColor = [
-    '#00304999',
-    '#00304999',
-    '#00304999',
-    '#D6282899',
-    '#D6282899',
-    '#D6282899',
-    '#F77F0099',
-    '#F77F0099',
-    '#F77F0099',
-    '#FCBF4999',
-    '#FCBF4999',
-    '#FCBF4999',
-    '#EAE2B799',
-    '#EAE2B799',
-    '#EAE2B799'
-  ]
-  const themeColor = useColorModeValue(lightColor, darkColor)
-  const [waveCount, setWaveCount] = useState(7)
-  const [pointCount, setPointCount] = useState(7)
-
-  useEffect(() => {
-    // useEffect to Clean-up when data change
-    new App(themeColor, waveCount, pointCount)
-  }, [themeColor, waveCount, pointCount])
-
-  return (
-    <>
-      <Container mt={50} bgColor="transparent" align="center">
-        <Box>
-          <Box fontSize="lg" fontWeight="bold" pos="inline-block">
-            Wave
-          </Box>
-          <Slider
-            defaultValue={waveCount}
-            min={3}
-            max={15}
-            step={1}
-            onChangeEnd={val => setWaveCount(val)}
-            zIndex={30}
-          >
-            <SliderTrack bg="red.100">
-              <Box position="relative" right={10} />
-              <SliderFilledTrack bg="tomato" />
-            </SliderTrack>
-            <SliderThumb boxSize={5} bg="tomato" />
-          </Slider>
-        </Box>
-        <Box mt={5}>
-          <Box fontSize="lg" fontWeight="bold" pos="inline-block">
-            Point
-          </Box>
-          <Slider
-            defaultValue={pointCount}
-            min={3}
-            max={15}
-            step={1}
-            onChangeEnd={val => setPointCount(val)}
-            zIndex={30}
-          >
-            <SliderTrack bg="red.100">
-              <Box position="relative" right={10} />
-              <SliderFilledTrack bg="tomato" />
-            </SliderTrack>
-            <SliderThumb boxSize={5} bg="tomato" />
-          </Slider>
-        </Box>
-      </Container>
-      <Box
-        id="wave-canvas"
-        width="100vw"
-        height="100vh"
-        pos="absolute"
-        top={0}
-        left={0}
-      />
-    </>
-  )
-}
-export default Wave

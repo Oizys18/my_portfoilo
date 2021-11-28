@@ -16,11 +16,18 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from '../components/theme-toggle-button'
 import OpenTerminalButton from '../components/terminal-button'
+import AchievementIconButton from '../components/achievement-toggle-button'
 import Logo from './logo'
 import GithubIconButton from './github-button'
 import BlogIconButton from './blog-button'
 
-const Navbar = ({ path, drawerController, isTerminalOpen }) => {
+const Navbar = ({
+  path,
+  onTerminalOpen,
+  isTerminalOpen,
+  onAchievementOpen,
+  isAchievementOpen
+}) => {
   return (
     <Box
       pos="fixed"
@@ -64,11 +71,12 @@ const Navbar = ({ path, drawerController, isTerminalOpen }) => {
           width={{ base: 'full', md: 'auto' }}
           mt={{ base: 4, nmd: 0 }}
         >
-          <ThemeToggleButton />
-          <OpenTerminalButton
-            isOpen={isTerminalOpen}
-            onOpen={drawerController}
+          <AchievementIconButton
+            isOpen={isAchievementOpen}
+            onOpen={onAchievementOpen}
           />
+          <ThemeToggleButton />
+          <OpenTerminalButton isOpen={isTerminalOpen} onOpen={onTerminalOpen} />
         </Stack>
         <Menu>
           <Stack
@@ -79,7 +87,7 @@ const Navbar = ({ path, drawerController, isTerminalOpen }) => {
             width={{ base: 'full', md: 'auto' }}
           >
             <ThemeToggleButton />
-            <OpenTerminalButton onOpen={drawerController} />
+            <OpenTerminalButton onOpen={onTerminalOpen} />
             <MenuButton
               as={IconButton}
               icon={<HamburgerIcon />}

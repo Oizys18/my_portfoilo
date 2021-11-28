@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 // }
 const Mosaic = () => {
   // const themeColor = useColorModeValue('#ffffff', '#000000')
+  useSessionStorage('mosaicss')
   useEffect(() => {
     // drawMosaic(themeColor)
   }, [])

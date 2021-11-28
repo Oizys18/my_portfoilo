@@ -7,8 +7,16 @@ const DynamicTerminal = dynamic(() => import('../../lib/terminal'), {
   ssr: false
 })
 const Main = ({ children, router }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const { isTerminalLoaded } = useDisclosure()
+  const {
+    isOpen: isTerminalOpen,
+    onOpen: onTerminalOpen,
+    onClose: onTerminalClose
+  } = useDisclosure()
+  const {
+    isOpen: isAchievementOpen,
+    onOpen: onAchievementOpen,
+    onClose: onAchievementClose
+  } = useDisclosure()
 
   return (
     <Box as="main">
@@ -19,15 +27,20 @@ const Main = ({ children, router }) => {
       </Head>
       <Navbar
         path={router.asPath}
-        drawerController={onOpen}
-        isTerminalLoading={isTerminalLoaded}
-        isTerminalOpen={isOpen}
+        onTerminalOpen={onTerminalOpen}
+        isTerminalOpen={isTerminalOpen}
+        onAchievementOpen={onAchievementOpen}
+        isAchievementOpen={isAchievementOpen}
       />
-      <Drawer isOpen={isOpen} onClose={onClose}>
-        <DynamicTerminal
-          closeTerminal={onClose}
-          isTerminalLoaded={isTerminalLoaded}
-        />
+      <Drawer placement="top" isOpen={isTerminalOpen} onClose={onTerminalClose}>
+        <DynamicTerminal closeTerminal={onTerminalClose} />
+      </Drawer>
+      <Drawer
+        isOpen={isAchievementOpen}
+        onClose={onAchievementClose}
+        placement="left"
+      >
+        <div>도전과제기능 업데이트 예정!</div>
       </Drawer>
       <Box pt={16}>{children}</Box>
     </Box>

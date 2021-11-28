@@ -1,18 +1,6 @@
 import { Drawer, DrawerOverlay, DrawerContent } from '@chakra-ui/react'
-import { useEffect } from 'react'
-import Loading from './loading'
 
-const CustomDrawer = ({
-  placement = 'top',
-  isOpen,
-  onClose,
-  children,
-  setLoading
-}) => {
-  useEffect(() => {
-    setLoading(false)
-  }, [])
-
+const CustomDrawer = ({ placement, isOpen, onClose, children }) => {
   return (
     <>
       <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
@@ -23,4 +11,4 @@ const CustomDrawer = ({
   )
 }
 
-export default Loading(CustomDrawer)
+export default CustomDrawer
