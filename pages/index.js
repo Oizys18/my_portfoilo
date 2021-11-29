@@ -6,7 +6,7 @@ import Toast from '../components/Toast'
 import workExperience from '../lib/json/work-experience.json'
 import timeline from '../lib/json/timeline.json'
 import skills from '../lib/json/skills.json'
-import { Badge } from '@chakra-ui/react'
+import Tag from '../components/Tag'
 
 const Page = () => {
   Toast({
@@ -82,10 +82,10 @@ const Page = () => {
           기술스택
         </Box>
         <Box fontSize="sm" display="flex">
-          개발 경험 및 사용빈도:
-          <Badge colorScheme="green">상</Badge>,
-          <Badge colorScheme="orange">중</Badge>,
-          <Badge colorScheme="red">하</Badge>
+          <Box pr={1}>개발 경험 및 사용빈도:</Box>
+          <Tag colorScheme="green" size="sm" variant="solid" text="상" />/
+          <Tag colorScheme="orange" size="sm" variant="solid" text="중" />/
+          <Tag colorScheme="red" size="sm" variant="solid" text="하" />
         </Box>
       </Box>
       {skills ? (

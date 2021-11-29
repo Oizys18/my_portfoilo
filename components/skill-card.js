@@ -1,4 +1,6 @@
-import { Container, Box, Badge } from '@chakra-ui/react'
+import { Container, Box } from '@chakra-ui/react'
+import Tag from '../components/Tag'
+
 const SkillCard = ({ category, data }) => {
   const color = skillLevel => {
     switch (skillLevel) {
@@ -12,7 +14,16 @@ const SkillCard = ({ category, data }) => {
   }
 
   const SkillBadge = item => {
-    return <Badge colorScheme={color(item.type)}>{item.title}</Badge>
+    return (
+      <Box m={1}>
+        <Tag
+          colorScheme={color(item.type)}
+          size="md"
+          variant="solid"
+          text={item.title}
+        />
+      </Box>
+    )
   }
 
   return category ? (
@@ -29,17 +40,23 @@ const SkillCard = ({ category, data }) => {
           flexDir="column"
           alignItems="center"
           justifyContent="center"
-          w={{ base: '100%', md: '45%' }}
+          bgColor="#00000020"
+          fontSize="lg"
+          fontWeight="bold"
           p={3}
           mr={10}
-          fontWeight="bold"
-          fontSize="lg"
-          bgColor="#00000020"
+          w={{ base: '100%', md: '45%' }}
         >
           {category}
         </Box>
         {data ? (
-          <Box pt={{ base: 3, md: 0 }}>
+          <Box
+            flexDir="row"
+            display="flex"
+            flexWrap="wrap"
+            pt={{ base: 3, md: 0 }}
+            width={{ base: '100%', md: '45%' }}
+          >
             {data.map((value, index) => {
               return <Box key={index}>{SkillBadge(value)}</Box>
             })}
