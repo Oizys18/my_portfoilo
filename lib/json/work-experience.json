@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "title": "삼성청년SW아카데미 2기",
     "duration": "2019.07~2020.06",
     "description": [
@@ -14,7 +13,6 @@
     ]
   },
   {
-    "id": "2",
     "title": "Django 공식문서 번역",
     "duration": null,
     "description": [
@@ -23,23 +21,21 @@
     ]
   },
   {
-    "id": "3",
+    "title": "Matata 웹서비스 개발",
+    "duration": "2021.07~2021.11",
+    "description": [
+      "동영상기반 SNS 플랫폼 개발",
+      "프론트엔드 개발 팀장 및 팀원으로 참여",
+      "ReactJS + Apollo Client 활용"
+    ]
+  },
+  {
     "title": "취득 자격증",
     "duration": null,
     "description": [
       "2013 자동차 운전면허 1종",
       "2021 OPIC IH",
       "2021 정보처리기사"
-    ]
-  },
-  {
-    "id": "4",
-    "title": "Matata 웹서비스 개발",
-    "duration": "2021.08~2021.11",
-    "description": [
-      "동영상기반 SNS 플랫폼 개발",
-      "프론트엔드 개발 팀장 및 팀원으로 참여",
-      "ReactJS + Apollo Client 활용"
     ]
   }
 ]

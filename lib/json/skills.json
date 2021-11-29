@@ -28,15 +28,19 @@
                 "type": "middle"
             },
             {
+                "title": "Typescript",
+                "type": "middle"
+            },
+            {
                 "title": "Storybook",
                 "type": "low"
             },
             {
-                "title": "Typescript",
+                "title": "VueJS",
                 "type": "low"
             },
             {
-                "title": "VueJS",
+                "title": "i18n",
                 "type": "low"
             }
         ]

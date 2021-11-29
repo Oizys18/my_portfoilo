@@ -8,7 +8,7 @@ const AchievementIconButton = ({ onOpen }) => {
       onClick={onOpen}
       colorScheme="yellow"
       icon={<AiFillTrophy fontSize={25} />}
-      color={useColorModeValue('#00000050', '#ffffff50')}
+      color={useColorModeValue('#ffffff', '#000000')}
       _hover={{ color: hoverColor }}
     />
   )

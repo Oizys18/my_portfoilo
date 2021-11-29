@@ -26,48 +26,44 @@ const SkillCard = ({ category, data }) => {
     )
   }
 
-  return category ? (
-    <>
-      <Container
-        maxW="container.md"
-        mt={3}
+  return (
+    <Container
+      maxW="container.md"
+      mt={3}
+      display="flex"
+      flexDir={{ base: 'column', md: 'row' }}
+      pb={5}
+    >
+      <Box
         display="flex"
-        flexDir={{ base: 'column', md: 'row' }}
-        pb={5}
+        flexDir="column"
+        alignItems="center"
+        justifyContent="center"
+        bgColor="#00000020"
+        fontSize="lg"
+        fontWeight="bold"
+        p={3}
+        mr={10}
+        w={{ base: '100%', md: '45%' }}
       >
+        {category}
+      </Box>
+      {data ? (
         <Box
+          flexDir="row"
           display="flex"
-          flexDir="column"
-          alignItems="center"
-          justifyContent="center"
-          bgColor="#00000020"
-          fontSize="lg"
-          fontWeight="bold"
-          p={3}
-          mr={10}
-          w={{ base: '100%', md: '45%' }}
+          flexWrap="wrap"
+          pt={{ base: 3, md: 0 }}
+          width={{ base: '100%', md: '45%' }}
         >
-          {category}
+          {data.map((value, index) => {
+            return <Box key={index}>{SkillBadge(value)}</Box>
+          })}
         </Box>
-        {data ? (
-          <Box
-            flexDir="row"
-            display="flex"
-            flexWrap="wrap"
-            pt={{ base: 3, md: 0 }}
-            width={{ base: '100%', md: '45%' }}
-          >
-            {data.map((value, index) => {
-              return <Box key={index}>{SkillBadge(value)}</Box>
-            })}
-          </Box>
-        ) : (
-          <></>
-        )}
-      </Container>
-    </>
-  ) : (
-    <>No data</>
+      ) : (
+        <></>
+      )}
+    </Container>
   )
 }
 export default SkillCard
