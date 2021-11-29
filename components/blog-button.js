@@ -4,7 +4,7 @@ import { Icon, useColorModeValue, Link } from '@chakra-ui/react'
 const BlogIconButton = () => {
   const hoverColor = useColorModeValue('black', 'white')
   return (
-    <Link href="https://github.com/Oizys18" target="_blank">
+    <Link href="https://oizys.tistory.com/" target="_blank">
       <Icon
         display="block"
         w={6}

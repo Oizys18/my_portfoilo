@@ -10,7 +10,6 @@ import Tag from '../components/Tag'
 
 const Page = () => {
   Toast({
-    id: 'index-toast',
     title: '방문해주셔서 감사합니다!',
     description: '우측 상단의 터미널 이용해보세요',
     status: 'success',
@@ -48,7 +47,7 @@ const Page = () => {
         </Box>
       </Box>
 
-      <Box fontWeight="bold" fontSize="2xl" mt={10}>
+      <Box fontWeight="bold" fontSize="2xl" mt={10} mb={5}>
         교육 및 경험
       </Box>
       {workExperience ? (
@@ -66,7 +65,7 @@ const Page = () => {
         <>No Data</>
       )}
 
-      <Box fontWeight="bold" fontSize="2xl" mt={10}>
+      <Box fontWeight="bold" fontSize="2xl" mt={10} mb={5}>
         타임라인
       </Box>
       {timeline ? (
@@ -77,12 +76,12 @@ const Page = () => {
         <>No data</>
       )}
 
-      <Box mt={10}>
+      <Box mt={10} mb={5}>
         <Box fontWeight="bold" fontSize="2xl">
           기술스택
         </Box>
-        <Box fontSize="sm" display="flex">
-          <Box pr={1}>개발 경험 및 사용빈도:</Box>
+        <Box fontSize="sm" display="flex" gridGap={1.5}>
+          <Box>개발 경험 및 사용빈도:</Box>
           <Tag colorScheme="green" size="sm" variant="solid" text="상" />/
           <Tag colorScheme="orange" size="sm" variant="solid" text="중" />/
           <Tag colorScheme="red" size="sm" variant="solid" text="하" />

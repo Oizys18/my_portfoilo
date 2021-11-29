@@ -23,15 +23,24 @@
 ## 내용
 
 - 프로젝트 경험 소개
+
+  - 아로새김
+  - GrEat
+  - 분실둥실
+
 - 토이프로젝트 경험 소개
-- chanuCLI 개발 경험을 살려 Fake Terminal 구현
+  - Wave
+  - Burger
+  - UI Gallery (Toggle +a)
+  - chanuCLI 개발 경험을 살려 Fake Terminal 구현
+  - GIF generator
+  - Thumbnail generator
 
 ## 개발 중 이슈
 
 - xterm backspace issue
 - xterm importing -> Dynamic importing & useEffect hook
-- xterm chrome android double input
--
+- xterm chrome android weird behavior (duplicate input & backspace input)
 
 ## 회고
 
