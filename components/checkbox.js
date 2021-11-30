@@ -39,17 +39,7 @@ const CheckBox = styled.input`
   border-radius: 100%;
   background: ${props => props.color ?? 'red'};
   z-index: 1;
-  ::before {
-    position: absolute;
-    content: '';
-    justify-content: flex-start;
-    align-items: center;
-  }
-  ::after {
-    position: relative;
-    content: '';
-    display: block;
-  }
+  transition: 0.2s ease-in-out;
   &:checked {
     border-radius: 100%;
     background: ${props => props.checkedColor ?? 'black'};

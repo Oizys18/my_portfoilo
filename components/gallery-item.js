@@ -15,12 +15,14 @@ const GalleryItem = ({ title, description, children }) => {
         borderRadius={5}
         p={5}
       >
-        <Box display="flex" gridGap={10} flexWrap="wrap">
-          <Text fontWeight="bold">
-            {description.map((value, index) => {
-              return <Box key={index}>{value}</Box>
-            })}
-          </Text>
+        <Box display="flex" flexWrap="wrap">
+          {description.map((value, index) => {
+            return (
+              <Text fontWeight="bold" key={index}>
+                {value}
+              </Text>
+            )
+          })}
         </Box>
         <Box
           display="flex"

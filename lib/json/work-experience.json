@@ -13,11 +13,12 @@
     ]
   },
   {
-    "title": "Django 공식문서 번역",
-    "duration": null,
+    "title": "기업소개 웹사이트 개발",
+    "duration": "2020.07~2021.04",
     "description": [
-      "https://docs.djangoproject.com/",
-      "Django 프레임워크 공식문서 로컬라이징 참여"
+      "ReactJS+Firebase 기업용 웹사이트 개발",
+      "i18N 다국어 지원 기능 구현",
+      "반응형 웹사이트 구현"
     ]
   },
   {
@@ -25,8 +26,16 @@
     "duration": "2021.07~2021.11",
     "description": [
       "동영상기반 SNS 플랫폼 개발",
-      "프론트엔드 개발 팀장 및 팀원으로 참여",
-      "ReactJS + Apollo Client 활용"
+      "ReactJS + Apollo Client 활용",
+      "프론트엔드 개발 팀장 및 팀원으로 참여"
+    ]
+  },
+  {
+    "title": "Django 공식문서 번역",
+    "duration": null,
+    "description": [
+      "https://docs.djangoproject.com/",
+      "Django 프레임워크 공식문서 로컬라이징 참여"
     ]
   },
   {

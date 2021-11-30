@@ -1,5 +1,4 @@
 import { Container } from '@chakra-ui/react'
-import { useState } from 'react'
 import Toggle from '../../components/Toggle'
 import GalleryItem from '../../components/gallery-item'
 import CheckBox from '../../components/checkbox'
@@ -11,20 +10,20 @@ const Gallery = () => {
       display="flex"
       justify="center"
       flexWrap="wrap"
-      p={3}
       borderRadius={8}
+      p={3}
     >
       <GalleryItem
         title="Toggle"
         description={[
           'Styled-component(SCSS), ::before와 ::after를 활용해 만들었다.',
-          `배경색과 내부 텍스트, 원의 색을 설정할 수 있다.`
+          '텍스트,원,배경의 색과 크기, 텍스트 등을 설정할 수 있다.'
         ]}
       >
         <Toggle
+          size="sm"
           setChecked={() => {}}
-          left="공개"
-          right="비밀"
+          noText={false}
           leftColor="#000000CC"
           rightColor="#000000CC"
           leftBgColor="#5F96FC"
@@ -33,9 +32,10 @@ const Gallery = () => {
           rightCircleColor="#ffffff"
         />
         <Toggle
+          size="md"
           setChecked={() => {}}
-          left="Yes"
-          right="No"
+          leftText="Yes"
+          rightText="No"
           leftBgColor="#098486"
           rightBgColor="#D62828"
           leftCircleColor="#ffffffCC"
@@ -43,24 +43,25 @@ const Gallery = () => {
         />
         <Toggle
           setChecked={() => {}}
-          left="공개"
-          right="비밀"
-          leftColor="white"
+          size="lg"
+          leftText="공개"
+          rightText="비밀"
+          leftColor="#000000CC"
           rightColor="white"
-          leftBgColor="#005F73"
-          rightBgColor="#002C3D"
-          leftCircleColor="#000000"
-          rightCircleColor="#ffffff"
+          leftBgColor="#999999"
+          rightBgColor="#55CC"
+          leftCircleColor="#00000050"
+          rightCircleColor="#99CC"
         />
         <Toggle
+          size="md"
           setChecked={() => {}}
-          left="공개"
-          right="비밀"
+          noText={true}
           leftColor="white"
           rightColor="white"
-          leftBgColor="#005F73"
-          rightBgColor="#002C3D"
-          leftCircleColor="#000000"
+          leftBgColor="#999999"
+          rightBgColor="#000000"
+          leftCircleColor="#ffffff"
           rightCircleColor="#ffffff"
         />
       </GalleryItem>
@@ -71,11 +72,11 @@ const Gallery = () => {
           'Styled-components(SCSS), svg를 사용해 클릭시 애니메이션을 추가했다.'
         ]}
       >
-        <CheckBox color="orange"></CheckBox>
-        <CheckBox></CheckBox>
-        <CheckBox></CheckBox>
-        <CheckBox></CheckBox>
-        <CheckBox></CheckBox>
+        <CheckBox color="#ff0000"></CheckBox>
+        <CheckBox color="#CC0000"></CheckBox>
+        <CheckBox color="#EE9B00"></CheckBox>
+        <CheckBox color="#098486"></CheckBox>
+        <CheckBox color="#002C3D"></CheckBox>
       </GalleryItem>
     </Container>
   )
