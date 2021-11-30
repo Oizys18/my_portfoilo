@@ -8,7 +8,8 @@ export default function Toggle({
   rightColor,
   leftBgColor,
   rightBgColor,
-  circleColor,
+  leftCircleColor,
+  rightCircleColor,
   setChecked
 }) {
   return (
@@ -20,7 +21,8 @@ export default function Toggle({
         rightColor={rightColor}
         leftBgColor={leftBgColor}
         rightBgColor={rightBgColor}
-        circleColor={circleColor}
+        leftCircleColor={leftCircleColor}
+        rightCircleColor={rightCircleColor}
         onChange={() => setChecked()}
         type="checkbox"
       />
@@ -39,8 +41,7 @@ const CheckBox = styled.input`
   z-index: 1;
   width: 5rem;
   height: 2rem;
-  background: var(--second);
-  background: ${props => props.leftBgColor ?? 'var(--grey)'};
+  background: ${props => props.leftBgColor ?? '#00000050'};
   border-radius: 2em;
   /* 선택X 텍스트 */
   ::before {
@@ -52,9 +53,9 @@ const CheckBox = styled.input`
     padding: 0 0 0 1em;
     justify-content: flex-start;
     align-items: center;
-    color: ${props => props.leftColor ?? 'var(--white)'};
-    font-weight: var(--bold);
-    font-size: var(--small);
+    color: ${props => props.leftColor ?? '#ffffff'};
+    font-weight: bold;
+    font-size: small;
     /* 텍스트 트랜지션 */
     transition: all 0.2s ease-in-out;
   }
@@ -68,12 +69,12 @@ const CheckBox = styled.input`
     top: calc((2rem - 1.6em) / 2);
     left: calc(5rem - 1.8em);
     border-radius: 50%;
-    background: ${props => props.circleColor ?? 'var(--white)'};
+    background: ${props => props.leftCircleColor ?? '#ffffff'};
     /* 원 이동 트랜지션 */
     transition: all 0.2s ease-in-out;
   }
   &:checked {
-    background: ${props => props.rightBgColor ?? 'var(--black)'};
+    background: ${props => props.rightBgColor ?? '#000000'};
     /* 배경색 변경 트랜지션 */
     transition: all 0.2s ease-in-out;
     /* 선택 O 텍스트 */
@@ -83,9 +84,9 @@ const CheckBox = styled.input`
       content: '${props => props.right ?? 'No'}';
       align-items: center;
       justify-content: center;
-      font-weight: var(--bold);
-      font-size: var(--small);
-      color: ${props => props.rightColor ?? 'var(--white)'};
+      font-weight: bold;
+      font-size: small;
+      color: ${props => props.rightColor ?? '#ffffff'};
     }
     /* 선택 O 원 */
     ::after {
@@ -98,7 +99,7 @@ const CheckBox = styled.input`
       display: block;
       position: relative;
       border-radius: 50%;
-      background: white;
+      background: ${props => props.rightCircleColor ?? '#ffffff'};
     }
   }
 `
