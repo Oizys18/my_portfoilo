@@ -49,6 +49,12 @@ const Wave = () => {
   const themeColor = useColorModeValue(lightColor, darkColor)
   const [waveCount, setWaveCount] = useState(7)
   const [pointCount, setPointCount] = useState(7)
+
+  useEffect(() => {
+    // useEffect to Clean-up when data change
+    new App(themeColor, waveCount, pointCount)
+  }, [themeColor, waveCount, pointCount])
+
   // Toast({
   //   id: 'wave-toast-achievement',
   //   title: 'Wave 프로젝트 확인!',
@@ -59,11 +65,6 @@ const Wave = () => {
   //   title: ''
   // })
   // useSessionStorage('wave')
-
-  useEffect(() => {
-    // useEffect to Clean-up when data change
-    new App(themeColor, waveCount, pointCount)
-  }, [themeColor, waveCount, pointCount])
 
   return (
     <>
@@ -107,14 +108,7 @@ const Wave = () => {
           </Slider>
         </Box>
       </Container>
-      <Box
-        id="wave-canvas"
-        width="100vw"
-        height="100vh"
-        pos="absolute"
-        top={0}
-        left={0}
-      />
+      <Box id="wave-canvas" pos="absolute" top={0} left={0} />
     </>
   )
 }

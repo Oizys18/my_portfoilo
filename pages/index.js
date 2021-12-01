@@ -1,4 +1,4 @@
-import { Image, Container, Box } from '@chakra-ui/react'
+import { Image, Container, Box, Kbd } from '@chakra-ui/react'
 import TextCard from '../components/text-card'
 import TimeCard from '../components/time-card'
 import SkillCard from '../components/skill-card'
