@@ -1,7 +1,7 @@
 import { Container } from '@chakra-ui/react'
-import Toggle from '../../components/Toggle'
+import Toggle from '../../components/gallery/Toggle'
 import GalleryItem from '../../components/gallery-item'
-import CheckBox from '../../components/checkbox'
+import CheckBox from '../../components/gallery/checkbox'
 
 const Gallery = () => {
   return (
@@ -72,11 +72,11 @@ const Gallery = () => {
           'Styled-components(SCSS), svg를 사용해 클릭시 애니메이션을 추가했다.'
         ]}
       >
-        <CheckBox color="#ff0000"></CheckBox>
-        <CheckBox color="#CC0000"></CheckBox>
-        <CheckBox color="#EE9B00"></CheckBox>
-        <CheckBox color="#098486"></CheckBox>
-        <CheckBox color="#002C3D"></CheckBox>
+        <CheckBox color="#ff0000" />
+        <CheckBox color="#CC0000" />
+        <CheckBox color="#EE9B00" />
+        <CheckBox color="#098486" />
+        <CheckBox color="#002C3D" />
       </GalleryItem>
     </Container>
   )

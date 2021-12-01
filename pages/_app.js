@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/provider'
 import Layout from '../components/layouts/main'
 import theme from '../lib/theme'
-import Fonts from '../components/font'
+import Fonts from '../lib/font'
 import '../styles/xterm.css'
 
 const Website = ({ Component, pageProps, router }) => {
