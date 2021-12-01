@@ -1,5 +1,5 @@
 import { Container, Box } from '@chakra-ui/react'
-import Tag from '../components/Tag'
+import Tag from '../Tag'
 
 const SkillCard = ({ category, data }) => {
   const color = skillLevel => {

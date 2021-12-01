@@ -1,6 +1,6 @@
 import { Container } from '@chakra-ui/react'
 import Toggle from '../../components/gallery/Toggle'
-import GalleryItem from '../../components/gallery-item'
+import GalleryItem from '../../components/gallery/gallery-item'
 import CheckBox from '../../components/gallery/checkbox'
 
 const Gallery = () => {
