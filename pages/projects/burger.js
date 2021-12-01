@@ -1,8 +1,23 @@
 import { Image } from '@chakra-ui/react'
 import { useEffect } from 'react'
-import { Container, Box } from '@chakra-ui/react'
+import { Container, Box, Text } from '@chakra-ui/react'
 
 const Burger = () => {
+  const isMobile = () => {
+    if (typeof window !== 'undefined') {
+      return (
+        <>
+          {'ontouchstart' in window ||
+          navigator.maxTouchPoints > 0 ||
+          navigator.msMaxTouchPoints > 0
+            ? '데스크탑에서만 작동합니다!'
+            : ''}
+        </>
+      )
+    }
+
+    return null
+  }
   useEffect(() => {
     window.addEventListener('mousemove', mouseIsMoving)
     return () => {
@@ -11,7 +26,11 @@ const Burger = () => {
   }, [])
 
   const mouseIsMoving = e => {
-    if (screen.width > 800 && document.getElementById('FlyingBurger')) {
+    const isMobile =
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0
+    if (!isMobile && document.getElementById('FlyingBurger')) {
       var hamX = document.getElementById('FlyingBurger').offsetLeft
       var hamY = document.getElementById('FlyingBurger').offsetTop
       var x = (hamX - e.pageX) * 0.1
@@ -22,8 +41,18 @@ const Burger = () => {
   }
 
   return (
-    <Container>
-      <Box mt={50} display="block" id="FlyingBurger">
+    <Container
+      mt={100}
+      display="flex"
+      alignItems="center"
+      maxW="container.md"
+      justifyContent="center"
+      flexDir="column"
+    >
+      <Text fontSize={20} fontWeight="bold">
+        {isMobile()}
+      </Text>
+      <Box display="block" id="FlyingBurger">
         <Image
           src="/images/burger.png"
           width={350}
