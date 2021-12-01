@@ -1,6 +1,13 @@
 import { useEffect } from 'react'
 import Image from 'next/image'
 import { Container, Box } from '@chakra-ui/react'
+import BurgerImage from '../../public/images/burger.png'
+
+const myLoader = ({ src, width, quality }) => {
+  return `/images/burger.png`
+  return `https://example.com/${src}?w=${width}&q=${quality || 75}`
+}
+
 const Burger = () => {
   useEffect(() => {
     window.addEventListener('mousemove', mouseIsMoving)
@@ -24,7 +31,7 @@ const Burger = () => {
     <Container>
       <Box mt={50} display="block" id="FlyingBurger">
         <Image
-          src="/images/burger.png"
+          src={BurgerImage}
           layout="responsive"
           width={400}
           height={400}
