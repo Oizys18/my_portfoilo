@@ -14,12 +14,12 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-import ThemeToggleButton from '../components/theme-toggle-button'
-import OpenTerminalButton from '../components/terminal-button'
-import AchievementIconButton from '../components/achievement-toggle-button'
-import Logo from './logo'
+import ThemeToggleButton from './theme-toggle-button'
+import OpenTerminalButton from './terminal-button'
+import AchievementIconButton from './achievement-toggle-button'
 import GithubIconButton from './github-button'
 import BlogIconButton from './blog-button'
+import Logo from './logo'
 
 const Navbar = ({
   path,

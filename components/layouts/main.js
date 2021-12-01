@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Navbar from '../navbar'
+import Navbar from '../navbar/navbar'
 import Drawer from '../drawer'
 import { Box, useDisclosure } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'

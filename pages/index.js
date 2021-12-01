@@ -1,11 +1,11 @@
 import { Image, Container, Box } from '@chakra-ui/react'
-import TextCard from '../components/text-card'
-import TimeCard from '../components/time-card'
-import SkillCard from '../components/skill-card'
-import Toast from '../components/Toast'
+import TextCard from '../components/index/text-card'
+import TimeCard from '../components/index/time-card'
+import SkillCard from '../components/index/skill-card'
 import workExperience from '../lib/json/work-experience.json'
 import timeline from '../lib/json/timeline.json'
 import skills from '../lib/json/skills.json'
+import Toast from '../components/Toast'
 import Tag from '../components/Tag'
 
 const Page = () => {
