@@ -3,9 +3,8 @@ import Image from 'next/image'
 import { Container, Box } from '@chakra-ui/react'
 import BurgerImage from '../../public/images/burger.png'
 
-const myLoader = ({ src, width, quality }) => {
-  return `/images/burger.png`
-  return `https://example.com/${src}?w=${width}&q=${quality || 75}`
+const myLoader = () => {
+  return `/images/burger.png/`
 }
 
 const Burger = () => {
@@ -31,7 +30,9 @@ const Burger = () => {
     <Container>
       <Box mt={50} display="block" id="FlyingBurger">
         <Image
+          loader={myLoader}
           src={BurgerImage}
+          priority
           layout="responsive"
           width={400}
           height={400}

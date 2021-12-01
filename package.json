@@ -8,7 +8,7 @@
     "build": "next build",
     "prettier": "prettier -write .",
     "lint": "next lint",
-    "netlify-deploy": "next build && next export"
+    "netlify-deploy": "next build && next start"
   },
   "keywords": [],
   "author": "Yang Chan Woo <oizys18@gmail.com>",
