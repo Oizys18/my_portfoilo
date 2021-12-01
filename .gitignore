@@ -11,3 +11,4 @@ node_modules
 .vscode
 
 # End of https://www.toptal.com/developers/gitignore/api/nextjs
+yarn-error.log
