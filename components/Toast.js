@@ -2,6 +2,7 @@ import { useToast } from '@chakra-ui/react'
 function Toast({
   id,
   title,
+  position = 'top-right',
   description,
   variant = 'solid',
   status = 'success',
@@ -14,7 +15,7 @@ function Toast({
       title: title,
       description: description,
       variant: variant,
-      position: 'top-right',
+      position: position,
       status: status,
       duration: duration,
       isClosable: true

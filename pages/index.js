@@ -14,7 +14,8 @@ const Page = () => {
     description: '우측 상단의 터미널 이용해보세요',
     status: 'success',
     duration: '5000',
-    id: 'index-toast'
+    id: 'index-toast',
+    position: 'top-right'
   })
   return (
     <Container maxW="container.md" mt={10} mb={20}>
@@ -41,8 +42,8 @@ const Page = () => {
               양찬우
             </Box>
           </Container>
-          <Container maxW="container.md" pt={5} fontSize="lg">
-            <Box>프론트엔드 개발자 / 작가 / 크리에이터</Box>
+          <Container maxW="container.md" pt={4} fontSize="lg">
+            <Box>긍정주의 프론트엔드 개발자</Box>
           </Container>
         </Box>
       </Box>

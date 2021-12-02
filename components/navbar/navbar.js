@@ -4,14 +4,11 @@ import {
   Box,
   Link,
   Stack,
-  Heading,
-  Flex,
   Menu,
   MenuItem,
   MenuList,
   MenuButton,
-  IconButton,
-  useColorModeValue
+  IconButton
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
@@ -29,29 +26,26 @@ const Navbar = ({
   isAchievementOpen
 }) => {
   return (
-    <Box
-      pos="fixed"
-      as="nav"
-      w="100%"
-      bg={useColorModeValue('#ffffff', '#202023')}
-      zIndex={1}
-    >
+    <Box pos="fixed" as="nav" w="100%" bg="transparent" zIndex={1}>
       <Container
-        p={2}
+        p={3}
         display="flex"
-        maxW="container.lg"
+        maxW="container.xl"
         wrap="wrap"
         justify="center"
       >
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-            <NextLink href="/">
-              <Link _hover={{ textDecoration: 'none' }}>
-                <Logo />
-              </Link>
-            </NextLink>
-          </Heading>
-        </Flex>
+        <Box
+          display="flex"
+          align="center"
+          mr={5}
+          width={{ base: 'full', md: 'auto' }}
+        >
+          <NextLink href="/">
+            <Link _hover={{ textDecoration: 'none' }}>
+              <Logo />
+            </Link>
+          </NextLink>
+        </Box>
         <Stack
           direction={{ base: 'column', md: 'row' }}
           display={{ base: 'none', md: 'flex' }}
