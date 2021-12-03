@@ -4,19 +4,17 @@ import {
   Box,
   Link,
   Stack,
-  Heading,
-  Flex,
   Menu,
   MenuItem,
   MenuList,
   MenuButton,
-  IconButton,
-  useColorModeValue
+  IconButton
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import OpenTerminalButton from './terminal-button'
 import AchievementIconButton from './achievement-toggle-button'
+import LocaleToggleButton from './locale-toggle-button'
 import GithubIconButton from './github-button'
 import BlogIconButton from './blog-button'
 import Logo from './logo'
@@ -29,29 +27,26 @@ const Navbar = ({
   isAchievementOpen
 }) => {
   return (
-    <Box
-      pos="fixed"
-      as="nav"
-      w="100%"
-      bg={useColorModeValue('#ffffff', '#202023')}
-      zIndex={1}
-    >
+    <Box pos="fixed" as="nav" w="100%" bg="transparent" zIndex={1}>
       <Container
-        p={2}
+        p={3}
         display="flex"
-        maxW="container.lg"
+        maxW="container.xl"
         wrap="wrap"
         justify="center"
       >
-        <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-            <NextLink href="/">
-              <Link _hover={{ textDecoration: 'none' }}>
-                <Logo />
-              </Link>
-            </NextLink>
-          </Heading>
-        </Flex>
+        <Box
+          display="flex"
+          align="center"
+          mr={5}
+          width={{ base: 'full', md: 'auto' }}
+        >
+          <NextLink href="/">
+            <Link _hover={{ textDecoration: 'none' }}>
+              <Logo />
+            </Link>
+          </NextLink>
+        </Box>
         <Stack
           direction={{ base: 'column', md: 'row' }}
           display={{ base: 'none', md: 'flex' }}
@@ -71,6 +66,7 @@ const Navbar = ({
           width={{ base: 'full', md: 'auto' }}
           mt={{ base: 4, nmd: 0 }}
         >
+          <LocaleToggleButton />
           <AchievementIconButton
             isOpen={isAchievementOpen}
             onOpen={onAchievementOpen}
@@ -86,6 +82,10 @@ const Navbar = ({
             direction={{ base: 'row', md: 'none' }}
             width={{ base: 'full', md: 'auto' }}
           >
+            <AchievementIconButton
+              isOpen={isAchievementOpen}
+              onOpen={onAchievementOpen}
+            />
             <ThemeToggleButton />
             <OpenTerminalButton onOpen={onTerminalOpen} />
             <MenuButton
@@ -97,7 +97,18 @@ const Navbar = ({
             />
           </Stack>
           <MenuList>
-            <MenuItem
+            <Stack
+              spacing={2}
+              alignItems="center"
+              justifyContent="space-around"
+              display={{ base: 'flex', md: 'none' }}
+              direction={{ base: 'row', md: 'none' }}
+              width={{ base: 'full', md: 'auto' }}
+            >
+              <GithubIconButton />
+              <BlogIconButton />
+            </Stack>
+            {/* <MenuItem
               as={Link}
               target="_blank"
               href="https://github.com/Oizys18"
@@ -112,7 +123,7 @@ const Navbar = ({
               path={path}
             >
               DevBlog
-            </MenuItem>
+            </MenuItem> */}
           </MenuList>
         </Menu>
       </Container>

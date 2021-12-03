@@ -11,6 +11,14 @@ import {
 // import Toast from '../../components/Toast'
 // import useSessionStorage from '../../lib/useSessionStorage'
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['projects']))
+  }
+})
+
 const Wave = () => {
   const lightColor = [
     '#002C3D99',
@@ -68,6 +76,7 @@ const Wave = () => {
 
   return (
     <>
+      <Box id="wave-canvas" pos="absolute" top={0} left={0} />
       <Container mt={50} bgColor="transparent" align="center">
         <Box>
           <Box fontSize="lg" fontWeight="bold" pos="inline-block">
@@ -79,7 +88,6 @@ const Wave = () => {
             max={15}
             step={1}
             onChangeEnd={val => setWaveCount(val)}
-            zIndex={30}
           >
             <SliderTrack bg="red.100">
               <Box position="relative" right={10} />
@@ -98,7 +106,6 @@ const Wave = () => {
             max={15}
             step={1}
             onChangeEnd={val => setPointCount(val)}
-            zIndex={30}
           >
             <SliderTrack bg="red.100">
               <Box position="relative" right={10} />
@@ -108,7 +115,6 @@ const Wave = () => {
           </Slider>
         </Box>
       </Container>
-      <Box id="wave-canvas" pos="absolute" top={0} left={0} />
     </>
   )
 }

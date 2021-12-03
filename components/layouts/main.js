@@ -23,7 +23,7 @@ const Main = ({ children, router }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <title>양찬우 :: Oizys18 Portfolio</title>
+        <title>this.self :: 양찬우 Frontend Developer</title>
       </Head>
       <Navbar
         path={router.asPath}

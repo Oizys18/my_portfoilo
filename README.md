@@ -1,4 +1,6 @@
-# 양찬우 개발 포트폴리오 [![Netlify Status](https://api.netlify.com/api/v1/badges/67f30f92-5216-4d7f-bba3-836081ede21e/deploy-status)](https://app.netlify.com/sites/oizys18/deploys)
+# this.self : 개발 포트폴리오
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/67f30f92-5216-4d7f-bba3-836081ede21e/deploy-status)](https://app.netlify.com/sites/oizys18/deploys)
 
 - [방문하기](https://oizys18.netlify.app/)
 
@@ -9,6 +11,7 @@
 - prettier & eslint : Pretty Linting
 - xterm : Fake Terminal UI
 - React : UseEffect hook to Dynamic importing xterm in NextJS SSR
+- Netlify : Free, Easy hosting & serverless backend
 
 ## 목표
 

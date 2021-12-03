@@ -1,0 +1,14 @@
+{
+    "hello": "world",
+    "index-toast-title": "Thank you for visiting!",
+    "index-toast-description": "Try out the Terminal on the Top right corner of the screen!",
+    "index-name": "ChanWoo Yang",
+    "index-job": "Frontend Developer",
+    "index-work": "Education & Experience",
+    "index-timeline": "Timeline",
+    "index-techstack": "Tech Stack",
+    "index-techExp": "Tech Exp & level",
+    "index-high": "high",
+    "index-mid": "middle",
+    "index-low": "low"
+}

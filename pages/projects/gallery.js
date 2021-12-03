@@ -3,6 +3,14 @@ import Toggle from '../../components/gallery/Toggle'
 import GalleryItem from '../../components/gallery/gallery-item'
 import CheckBox from '../../components/gallery/checkbox'
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['projects']))
+  }
+})
+
 const Gallery = () => {
   return (
     <Container

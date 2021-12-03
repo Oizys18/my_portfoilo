@@ -13,7 +13,7 @@ const TimeCard = ({ data, year }) => {
         flexDir="column"
         alignItems="center"
         justifyContent="center"
-        w={{ base: '100%', md: '45%' }}
+        w={{ base: '100%', md: '50%' }}
         p={3}
         mr={10}
         fontSize="xl"
@@ -23,7 +23,13 @@ const TimeCard = ({ data, year }) => {
         {year}
       </Box>
       {data ? (
-        <Box fontSize="sm" pt={{ base: 3, md: 0 }}>
+        <Box
+          fontSize="sm"
+          pt={{ base: 3, md: 0 }}
+          width={{ base: 'auto', md: '50%' }}
+          display="flex"
+          flexWrap="wrap"
+        >
           {data.map((value, index) => {
             return <div key={index}>{value.content}</div>
           })}

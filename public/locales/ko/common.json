@@ -1,0 +1,14 @@
+{
+    "hello": "월드",
+    "index-toast-title": "방문해주셔서 감사합니다!",
+    "index-toast-description": "우측 상단의 터미널을 이용해보세요!",
+    "index-name": "양찬우",
+    "index-job": "프론트엔드 개발자",
+    "index-work": "교육 및 경험",
+    "index-timeline": "타임라인",
+    "index-techstack": "기술스택",
+    "index-techExp": "개발 경험 및 사용빈도",
+    "index-high": "상",
+    "index-mid": "중",
+    "index-low": "하"
+}
