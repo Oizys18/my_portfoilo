@@ -1,8 +1,6 @@
 # this.self : 개발 포트폴리오
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/67f30f92-5216-4d7f-bba3-836081ede21e/deploy-status)](https://app.netlify.com/sites/oizys18/deploys)
-
-- [방문하기](https://oizys18.netlify.app/)
+- [방문하기](https://oizys18.vercel.app/)
 
 ## 사용스택 및 이유
 
@@ -11,7 +9,7 @@
 - prettier & eslint : Pretty Linting
 - xterm : Fake Terminal UI
 - React : UseEffect hook to Dynamic importing xterm in NextJS SSR
-- Netlify : Free, Easy hosting & serverless backend
+- Vercel : Free, Easy hosting & serverless backend + Nextjs support
 
 ## 목표
 
@@ -20,8 +18,9 @@
 - 재미있는 포트폴리오
 - xterm을 통한 가짜 터미널 UI 구현
 - 깔끔한 UI 생성
-- NextJS & Netlify 경험
+- NextJS & Vercel 
 - Light & Dark Theme 구현
+- i18N 다국어지원 구현
 
 ## 내용
 
