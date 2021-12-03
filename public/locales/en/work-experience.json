@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Samsung SW Academy",
+    "duration": "2019.07~2020.06",
+    "description": [
+      "Fundamental Computer Science & Web Development Knowledge",
+      "Approx 1600 hours of Algorithm study & team project development experience",
+      "Web development project experience using JS framework ( React, Vue )",
+      "Overall collaboration & communication experience with Agile software development, JIRA, GIT",
+      "SSAFY first semester first prize in Seoul",
+      "SSAFY team project second prize",
+      "SSAFY final project second prize"
+    ]
+  },
+  {
+    "title": "Commercial marketing web",
+    "duration": "2020.07~2021.04",
+    "description": [
+      "ReactJS+Firebase Commercial website",
+      "i18N internationalization & localization",
+      "Responsive website"
+    ]
+  },
+  {
+    "title": "Matata Web service",
+    "duration": "2021.07~2021.11",
+    "description": [
+      "Video SNS platform",
+      "ReactJS + Apollo Client",
+      "Frontend team leader & team member"
+    ]
+  },
+  {
+    "title": "Django project localization",
+    "duration": null,
+    "description": [
+      "https://docs.djangoproject.com/",
+      "Contributed to Django Framework documentation localization"
+    ]
+  },
+  {
+    "title": "Certificates",
+    "duration": null,
+    "description": [
+      "2013 Driver license",
+      "2021 OPIC IH(English Speaking)",
+      "2021 Engineer Information Processing"
+    ]
+  }
+]

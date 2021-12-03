@@ -44,7 +44,7 @@ const SkillCard = ({ category, data }) => {
         fontWeight="bold"
         p={3}
         mr={10}
-        w={{ base: '100%', md: '45%' }}
+        w={{ base: '100%', md: '50%' }}
       >
         {category}
       </Box>
@@ -54,7 +54,7 @@ const SkillCard = ({ category, data }) => {
           display="flex"
           flexWrap="wrap"
           pt={{ base: 3, md: 0 }}
-          width={{ base: '100%', md: '45%' }}
+          width={{ base: '100%', md: '50%' }}
         >
           {data.map((value, index) => {
             return <Box key={index}>{SkillBadge(value)}</Box>

@@ -2,28 +2,54 @@ import { Image, Container, Box } from '@chakra-ui/react'
 import TextCard from '../components/index/text-card'
 import TimeCard from '../components/index/time-card'
 import SkillCard from '../components/index/skill-card'
-import workExperience from '../lib/json/work-experience.json'
-import timeline from '../lib/json/timeline.json'
-import skills from '../lib/json/skills.json'
-import Toast from '../components/Toast'
+// import Toast from '../components/Toast'
 import Tag from '../components/Tag'
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
+
+import workExperienceKr from '../public/locales/ko/work-experience.json'
+import timelineKr from '../public/locales/ko/timeline.json'
+import skillsKr from '../public/locales/ko/skills.json'
+import workExperienceEn from '../public/locales/en/work-experience.json'
+import timelineEn from '../public/locales/en/timeline.json'
+import skillsEn from '../public/locales/en/skills.json'
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common']))
+  }
+})
+
 const Page = () => {
-  Toast({
-    title: '방문해주셔서 감사합니다!',
-    description: '우측 상단의 터미널 이용해보세요',
-    status: 'success',
-    duration: '5000',
-    id: 'index-toast',
-    position: 'top-right'
-  })
+  const { locales = [], defaultLocale, ...nextRouter } = useRouter()
+  const locale = locales.includes(nextRouter.locale || '')
+    ? nextRouter.locale
+    : defaultLocale
+
+  const workExperience = locale === 'ko' ? workExperienceKr : workExperienceEn
+  const skills = locale === 'ko' ? skillsKr : skillsEn
+  const timeline = locale === 'ko' ? timelineKr : timelineEn
+
+  const { t } = useTranslation('common')
+
+  // Toast({
+  //   title: t('index-toast-title'),
+  //   description: t('index-toast-description'),
+  //   status: 'success',
+  //   duration: '5000',
+  //   id: 'index-toast',
+  //   position: 'top-right'
+  // })
+
   return (
-    <Container maxW="container.md" mt={10} mb={20}>
+    <Container maxW="container.md" mb={20}>
       <Box>
-        <Box align="left" pl={5} pos="absolute" top={100}>
+        <Box align="left" pl={5} pos="absolute" top={{ base: 150, md: 100 }}>
           <Image
-            width={150}
-            height={150}
+            width={{ base: 100, md: 150 }}
+            height={{ base: 100, md: 150 }}
             borderRadius={5}
             alt="profile-image"
             src="/images/profile.png"
@@ -38,18 +64,18 @@ const Page = () => {
           color="white"
         >
           <Container maxW="container.md">
-            <Box as="h2" fontSize="4xl" fontWeight="bold" pt={3}>
-              양찬우
+            <Box as="h2" fontSize="2xl" fontWeight="bold" pt={3}>
+              {t('index-name')}
             </Box>
           </Container>
           <Container maxW="container.md" pt={4} fontSize="lg">
-            <Box>긍정주의 프론트엔드 개발자</Box>
+            <Box>{t('index-job')}</Box>
           </Container>
         </Box>
       </Box>
 
       <Box fontWeight="bold" fontSize="2xl" mt={10} mb={5}>
-        교육 및 경험
+        {t('index-work')}
       </Box>
       {workExperience ? (
         workExperience.map(data => {
@@ -67,7 +93,7 @@ const Page = () => {
       )}
 
       <Box fontWeight="bold" fontSize="2xl" mt={10} mb={5}>
-        타임라인
+        {t('index-timeline')}
       </Box>
       {timeline ? (
         timeline.map((value, index) => {
@@ -79,13 +105,30 @@ const Page = () => {
 
       <Box mt={10} mb={5}>
         <Box fontWeight="bold" fontSize="2xl">
-          기술스택
+          {t('index-techstack')}
         </Box>
-        <Box fontSize="sm" display="flex" gridGap={1.5}>
-          <Box>개발 경험 및 사용빈도:</Box>
-          <Tag colorScheme="green" size="sm" variant="solid" text="상" />/
-          <Tag colorScheme="orange" size="sm" variant="solid" text="중" />/
-          <Tag colorScheme="red" size="sm" variant="solid" text="하" />
+        <Box fontSize="sm" display="flex" gridGap={1.5} flexWrap="wrap">
+          <Box>{t('index-techExp')}:</Box>
+          <Tag
+            colorScheme="green"
+            size="sm"
+            variant="solid"
+            text={t('index-high')}
+          />
+          /
+          <Tag
+            colorScheme="orange"
+            size="sm"
+            variant="solid"
+            text={t('index-mid')}
+          />
+          /
+          <Tag
+            colorScheme="red"
+            size="sm"
+            variant="solid"
+            text={t('index-low')}
+          />
         </Box>
       </Box>
       {skills ? (

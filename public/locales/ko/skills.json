@@ -1,0 +1,153 @@
+[
+    {
+        "category": "Frontend",
+        "data": [
+            {
+                "title": "HTML5",
+                "type": "high"
+            },
+            {
+                "title": "CSS3(SCSS/SASS)",
+                "type": "high"
+            },
+            {
+                "title": "Javascript(es6)",
+                "type": "high"
+            },
+            {
+                "title": "ReactJS",
+                "type": "high"
+            },
+            {
+                "title": "Styled-components",
+                "type": "high"
+            },
+            {
+                "title": "NextJS",
+                "type": "middle"
+            },
+            {
+                "title": "Typescript",
+                "type": "middle"
+            },
+            {
+                "title": "Storybook",
+                "type": "low"
+            },
+            {
+                "title": "VueJS",
+                "type": "low"
+            },
+            {
+                "title": "i18n",
+                "type": "low"
+            }
+        ]
+    },
+    {
+        "category": "Backend",
+        "data": [
+            {
+                "title": "Express",
+                "type": "high"
+            },
+            {
+                "title": "Firebase",
+                "type": "high"
+            },
+            {
+                "title": "RESTAPI",
+                "type": "high"
+            },
+            {
+                "title": "Django",
+                "type": "middle"
+            },
+            {
+                "title": "Flask",
+                "type": "low"
+            }
+        ]
+    },
+    {
+        "category": "DevOps",
+        "data": [
+            {
+                "title": "MySQL",
+                "type": "high"
+            },
+            {
+                "title": "GraphQL",
+                "type": "middle"
+            },
+            {
+                "title": "NginX",
+                "type": "middle"
+            },
+            {
+                "title": "AWS",
+                "type": "low"
+            }
+        ]
+    },
+    {
+        "category": "Source Code Management",
+        "data": [
+            {
+                "title": "Git",
+                "type": "high"
+            },
+            {
+                "title": "Github/Gitlab",
+                "type": "high"
+            }
+        ]
+    },
+    {
+        "category": "Collaboration",
+        "data": [
+            {
+                "title": "JIRA",
+                "type": "high"
+            },
+            {
+                "title": "Slack",
+                "type": "high"
+            },
+            {
+                "title": "Notion",
+                "type": "high"
+            }
+        ]
+    },
+    {
+        "category": "Design",
+        "data": [
+            {
+                "title": "AdobeXD",
+                "type": "middle"
+            },
+            {
+                "title": "Figma",
+                "type": "low"
+            }
+        ]
+    },
+    {
+        "category": "Test",
+        "data": [
+            {
+                "title": "Jest",
+                "type": "low"
+            },
+            {
+                "title": "React Testing Library",
+                "type": "low"
+            },
+            {
+                "title": "JMeter",
+                "type": "low"
+            }
+        ]
+    }
+]

@@ -15,7 +15,7 @@ const TextCard = ({ title, duration, description }) => {
         justifyContent="center"
         fontSize="lg"
         fontWeight="bold"
-        w={{ base: '100%', md: '45%' }}
+        w={{ base: '100%', md: '50%' }}
         p={3}
         mr={10}
         bgColor="#00000020"
@@ -30,7 +30,13 @@ const TextCard = ({ title, duration, description }) => {
         )}
       </Box>
       {description ? (
-        <Box aria-label="description" pt={{ base: 3, md: 0 }}>
+        <Box
+          width={{ base: 'auto', md: '50%' }}
+          aria-label="description"
+          pt={{ base: 3, md: 0 }}
+          flexWrap="wrap"
+          display="flex"
+        >
           {description.map((value, index) => {
             return (
               <Box fontSize="sm" key={index}>

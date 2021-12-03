@@ -14,6 +14,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import OpenTerminalButton from './terminal-button'
 import AchievementIconButton from './achievement-toggle-button'
+import LocaleToggleButton from './locale-toggle-button'
 import GithubIconButton from './github-button'
 import BlogIconButton from './blog-button'
 import Logo from './logo'
@@ -65,6 +66,7 @@ const Navbar = ({
           width={{ base: 'full', md: 'auto' }}
           mt={{ base: 4, nmd: 0 }}
         >
+          <LocaleToggleButton />
           <AchievementIconButton
             isOpen={isAchievementOpen}
             onOpen={onAchievementOpen}
@@ -80,6 +82,10 @@ const Navbar = ({
             direction={{ base: 'row', md: 'none' }}
             width={{ base: 'full', md: 'auto' }}
           >
+            <AchievementIconButton
+              isOpen={isAchievementOpen}
+              onOpen={onAchievementOpen}
+            />
             <ThemeToggleButton />
             <OpenTerminalButton onOpen={onTerminalOpen} />
             <MenuButton
@@ -91,7 +97,18 @@ const Navbar = ({
             />
           </Stack>
           <MenuList>
-            <MenuItem
+            <Stack
+              spacing={2}
+              alignItems="center"
+              justifyContent="space-around"
+              display={{ base: 'flex', md: 'none' }}
+              direction={{ base: 'row', md: 'none' }}
+              width={{ base: 'full', md: 'auto' }}
+            >
+              <GithubIconButton />
+              <BlogIconButton />
+            </Stack>
+            {/* <MenuItem
               as={Link}
               target="_blank"
               href="https://github.com/Oizys18"
@@ -106,7 +123,7 @@ const Navbar = ({
               path={path}
             >
               DevBlog
-            </MenuItem>
+            </MenuItem> */}
           </MenuList>
         </Menu>
       </Container>
