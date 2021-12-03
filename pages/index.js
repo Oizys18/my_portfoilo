@@ -34,14 +34,14 @@ const Page = () => {
 
   const { t } = useTranslation('common')
 
-  // Toast({
-  //   title: t('index-toast-title'),
-  //   description: t('index-toast-description'),
-  //   status: 'success',
-  //   duration: '5000',
-  //   id: 'index-toast',
-  //   position: 'top-right'
-  // })
+  Toast({
+    title: t('index-toast-title'),
+    description: t('index-toast-description'),
+    status: 'success',
+    duration: '5000',
+    id: 'index-toast',
+    position: 'top-right'
+  })
 
   return (
     <Container maxW="container.md" mb={20}>
