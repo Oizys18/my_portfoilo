@@ -2,7 +2,7 @@ import { Image, Container, Box } from '@chakra-ui/react'
 import TextCard from '../components/index/text-card'
 import TimeCard from '../components/index/time-card'
 import SkillCard from '../components/index/skill-card'
-// import Toast from '../components/Toast'
+import Toast from '../components/Toast'
 import Tag from '../components/Tag'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -34,14 +34,14 @@ const Page = () => {
 
   const { t } = useTranslation('common')
 
-  // Toast({
-  //   title: t('index-toast-title'),
-  //   description: t('index-toast-description'),
-  //   status: 'success',
-  //   duration: '5000',
-  //   id: 'index-toast',
-  //   position: 'top-right'
-  // })
+  Toast({
+    title: t('index-toast-title'),
+    description: t('index-toast-description'),
+    status: 'success',
+    duration: '5000',
+    id: 'index-toast',
+    position: 'top-right'
+  })
 
   return (
     <Container maxW="container.md" mb={20}>

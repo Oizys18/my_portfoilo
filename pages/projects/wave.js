@@ -19,7 +19,7 @@ export const getStaticProps = async ({ locale }) => ({
   }
 })
 
-const Wave = () => {
+const WaveProject = () => {
   const lightColor = [
     '#002C3D99',
     '#005F7399',
@@ -60,7 +60,14 @@ const Wave = () => {
 
   useEffect(() => {
     // useEffect to Clean-up when data change
-    new App(themeColor, waveCount, pointCount)
+    const isMobile =
+      typeof window !== 'undefined' &&
+      ('ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0)
+    console.log(isMobile)
+
+    new App(themeColor, waveCount, pointCount, isMobile)
   }, [themeColor, waveCount, pointCount])
 
   // Toast({
@@ -118,15 +125,16 @@ const Wave = () => {
     </>
   )
 }
-export default Wave
+export default WaveProject
 
 const Point = class {
   // 간격을 가진 좌표를 생성, 좌표의 Y값을 이동시키고
   // 각 좌표를 선으로 연결하는 것
-  constructor(index, x, y) {
+  constructor(index, x, y, isMobile) {
     this.x = x
     this.y = y
-    this.fixedY = y
+    if (isMobile) this.fixedY = y * 1.5
+    else this.fixedY = y
     this.speed = 0.07
     this.cur = index
     this.max = Math.random() * 100 + 150
@@ -137,7 +145,7 @@ const Point = class {
   }
 }
 
-const Tide = class {
+const Wave = class {
   constructor(index, totalPoints, color) {
     this.index = index
     this.totalPoints = totalPoints
@@ -145,7 +153,7 @@ const Tide = class {
     this.points = []
   }
   // animation 생성 시, 그리려는 애니메이션의 좌표값을 가져와야한다.
-  resize(stageWidth, stageHeight) {
+  resize(stageWidth, stageHeight, isMobile) {
     this.stageWidth = stageWidth
     this.stageHeight = stageHeight
 
@@ -153,12 +161,17 @@ const Tide = class {
     this.centerY = stageHeight / 2
     // point의 간격, 스테이지 넓이를 총 포인트 -1 로 나눈 간격
     this.pointGap = this.stageWidth / (this.totalPoints - 1)
-    this.init()
+    this.init(isMobile)
   }
-  init() {
+  init(isMobile) {
     this.points = []
     for (let i = 0; i < this.totalPoints; i++) {
-      const point = new Point(this.index + i, this.pointGap * i, this.centerY)
+      const point = new Point(
+        this.index + i,
+        this.pointGap * i,
+        this.centerY,
+        isMobile
+      )
       this.points[i] = point
     }
   }
@@ -207,14 +220,14 @@ const WaveGroup = class {
     this.waves = []
 
     for (let i = 0; i < this.totalWaves; i++) {
-      const wave = new Tide(i, this.totalPoints, this.color[i])
+      const wave = new Wave(i, this.totalPoints, this.color[i])
       this.waves[i] = wave
     }
   }
-  resize(stageWidth, stageHeight) {
+  resize(stageWidth, stageHeight, isMobile) {
     for (let i = 0; i < this.totalWaves; i++) {
       const wave = this.waves[i]
-      wave.resize(stageWidth, stageHeight)
+      wave.resize(stageWidth, stageHeight, isMobile)
     }
   }
   draw(ctx) {
@@ -226,7 +239,7 @@ const WaveGroup = class {
 }
 
 const App = class {
-  constructor(themeColor, tideCount, point) {
+  constructor(themeColor, WaveCount, point, isMobile) {
     // canvas 생성 혹은 재활용
     const waveCanvas = document.getElementById('wave-canvas')
     if (!waveCanvas.hasChildNodes()) {
@@ -239,16 +252,16 @@ const App = class {
       this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight)
     }
 
-    this.waveGroup = new WaveGroup(themeColor, tideCount, point)
+    this.waveGroup = new WaveGroup(themeColor, WaveCount, point)
 
     // resize event
     window.addEventListener('resize', this.resize.bind(this), false)
-    this.resize()
+    this.resize(isMobile)
 
     // animation 시작
     requestAnimationFrame(this.animate.bind(this))
   }
-  resize() {
+  resize(isMobile) {
     this.stageWidth = document.body.clientWidth
     this.stageHeight = document.body.clientHeight
 
@@ -256,7 +269,7 @@ const App = class {
     this.canvas.width = this.stageWidth
     this.canvas.height = this.stageHeight
 
-    this.waveGroup.resize(this.stageWidth, this.stageHeight)
+    this.waveGroup.resize(this.stageWidth, this.stageHeight, isMobile)
   }
   animate() {
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight)

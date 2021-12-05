@@ -82,12 +82,8 @@ const Navbar = ({
             direction={{ base: 'row', md: 'none' }}
             width={{ base: 'full', md: 'auto' }}
           >
-            <AchievementIconButton
-              isOpen={isAchievementOpen}
-              onOpen={onAchievementOpen}
-            />
-            <ThemeToggleButton />
-            <OpenTerminalButton onOpen={onTerminalOpen} />
+            <GithubIconButton />
+            <BlogIconButton />
             <MenuButton
               as={IconButton}
               icon={<HamburgerIcon />}
@@ -105,8 +101,13 @@ const Navbar = ({
               direction={{ base: 'row', md: 'none' }}
               width={{ base: 'full', md: 'auto' }}
             >
-              <GithubIconButton />
-              <BlogIconButton />
+              <LocaleToggleButton />
+              <AchievementIconButton
+                isOpen={isAchievementOpen}
+                onOpen={onAchievementOpen}
+              />
+              <ThemeToggleButton />
+              <OpenTerminalButton onOpen={onTerminalOpen} />
             </Stack>
             {/* <MenuItem
               as={Link}
