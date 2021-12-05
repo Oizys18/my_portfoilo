@@ -79,7 +79,7 @@ const Navbar = ({
           <Stack
             alignItems="right"
             justifyContent="right"
-            style={{ base: `display: '-webkit-flex'`, md: 'none' }}
+            style={{ WebkitJustifyContent: 'right' }}
             display={{ base: 'flex', md: 'none' }}
             direction={{ base: 'row', md: 'none' }}
             width={{ base: 'full', md: 'auto' }}
