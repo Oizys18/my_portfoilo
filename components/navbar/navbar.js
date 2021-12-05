@@ -38,7 +38,7 @@ const Navbar = ({
         <Box
           display="flex"
           align="center"
-          mr={5}
+          mr={{ base: 0, md: 5 }}
           width={{ base: 'full', md: 'auto' }}
         >
           <NextLink href="/">
@@ -48,10 +48,11 @@ const Navbar = ({
           </NextLink>
         </Box>
         <Stack
-          direction={{ base: 'column', md: 'row' }}
-          display={{ base: 'none', md: 'flex' }}
+          direction={{ base: 'row', md: 'row' }}
+          // display={{ base: 'none', md: 'flex' }}
+          display="flex"
           width={{ base: 'full', md: 'auto' }}
-          alignItems="center"
+          alignItems={{ base: 'center', md: 'center' }}
           flexGrow={1}
           mt={{ base: 4, nmd: 0 }}
         >
@@ -80,16 +81,16 @@ const Navbar = ({
             justifyContent="right"
             display={{ base: 'flex', md: 'none' }}
             direction={{ base: 'row', md: 'none' }}
-            width={{ base: 'full', md: 'auto' }}
+            // width={{ base: 'full', md: 'auto' }}
+            width="full"
           >
-            <GithubIconButton />
-            <BlogIconButton />
             <MenuButton
               as={IconButton}
               icon={<HamburgerIcon />}
-              variant="outline"
               right
               aria-label="Options"
+              variant="outline"
+              bgColor="lightGray"
             />
           </Stack>
           <MenuList>

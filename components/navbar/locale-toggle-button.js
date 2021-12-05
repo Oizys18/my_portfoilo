@@ -11,7 +11,7 @@ const LocaleToggleButton = () => {
   }
   return (
     <NextLink href={router.pathname} locale={handleLocale()}>
-      <IconButton>
+      <IconButton colorScheme="green">
         <Box>{locale.toUpperCase()}</Box>
       </IconButton>
     </NextLink>
