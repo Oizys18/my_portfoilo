@@ -46,7 +46,7 @@ const Page = () => {
   return (
     <Container maxW="container.md" mb={20}>
       <Box>
-        <Box align="left" pl={5} pos="absolute" top={{ base: 150, md: 100 }}>
+        <Box align="left" pl={5} pos="absolute" top={{ base: 24, md: 20 }}>
           <Image
             width={{ base: 100, md: 150 }}
             height={{ base: 100, md: 150 }}
@@ -58,7 +58,7 @@ const Page = () => {
         <Box
           bgColor="#003049CC"
           pb={5}
-          mt={110}
+          mt={{ base: 12, md: 20 }}
           borderRadius={3}
           align="right"
           color="white"
