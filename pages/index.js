@@ -40,7 +40,7 @@ const Page = () => {
     status: 'success',
     duration: '5000',
     id: 'index-toast',
-    position: 'top-right'
+    position: 'bottom-right'
   })
 
   return (
