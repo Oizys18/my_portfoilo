@@ -75,17 +75,11 @@ const Navbar = ({
           <ThemeToggleButton />
           <OpenTerminalButton isOpen={isTerminalOpen} onOpen={onTerminalOpen} />
         </Stack>
-        {/* display: -webkit-flex;
-display: flex;
--webkit-justify-content: space-between;
-justify-content: space-between;
-         */}
         <Menu>
           <Stack
-            webkitJustifyContent="right"
-            webkitDisplay="flex"
             alignItems="right"
             justifyContent="right"
+            style={{ base: `display: '-webkit-flex'`, md: 'none' }}
             display={{ base: 'flex', md: 'none' }}
             direction={{ base: 'row', md: 'none' }}
             width={{ base: 'full', md: 'auto' }}
@@ -93,7 +87,7 @@ justify-content: space-between;
             <MenuButton
               as={IconButton}
               icon={<HamburgerIcon />}
-              right
+              justify="right"
               aria-label="Options"
               variant="outline"
               bgColor="lightGray"
