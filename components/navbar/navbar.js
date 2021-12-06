@@ -8,7 +8,8 @@ import {
   MenuItem,
   MenuList,
   MenuButton,
-  IconButton
+  IconButton,
+  useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
@@ -81,12 +82,13 @@ const Navbar = ({
             display={{ base: 'flex', md: 'none' }}
             direction={{ base: 'row', md: 'none' }}
             width={{ base: 'full', md: 'none' }}
+            gridGap={3}
           >
             <Box
               display="flex"
               justifyContent="right"
               alignItems="center"
-              gridGap={2}
+              gridGap={3}
             >
               <GithubIconButton />
               <BlogIconButton />
@@ -95,8 +97,8 @@ const Navbar = ({
               as={IconButton}
               icon={<HamburgerIcon />}
               aria-label="Options"
-              variant="outline"
-              bgColor="lightGray"
+              variant="solid"
+              bgColor={useColorModeValue('gray.300', 'gray.700')}
             />
           </Stack>
           <MenuList>
