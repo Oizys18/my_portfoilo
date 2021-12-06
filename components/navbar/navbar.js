@@ -47,10 +47,10 @@ const Navbar = ({
             </Link>
           </NextLink>
         </Box>
+
         <Stack
           direction={{ base: 'row', md: 'row' }}
-          // display={{ base: 'none', md: 'flex' }}
-          display="flex"
+          display={{ base: 'none', md: 'flex' }}
           width={{ base: 'full', md: 'auto' }}
           alignItems={{ base: 'center', md: 'center' }}
           flexGrow={1}
@@ -79,11 +79,20 @@ const Navbar = ({
           <Stack
             alignItems="right"
             justifyContent="right"
-            style={{ WebkitJustifyContent: 'right' }}
+            // style={{ WebkitJustifyContent: 'right' }}
             display={{ base: 'flex', md: 'none' }}
             direction={{ base: 'row', md: 'none' }}
             width={{ base: 'full', md: 'auto' }}
           >
+            <Box
+              display="flex"
+              justifyContent="right"
+              alignItems="center"
+              gridGap={2}
+            >
+              <GithubIconButton />
+              <BlogIconButton />
+            </Box>
             <MenuButton
               as={IconButton}
               icon={<HamburgerIcon />}
