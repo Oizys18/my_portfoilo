@@ -79,13 +79,16 @@ const Navbar = ({
           <Stack
             alignItems="right"
             justifyContent="right"
-            pos={{ base: 'absolute' }}
-            right={{ base: 5 }}
             display={{ base: 'flex', md: 'none' }}
             direction={{ base: 'row', md: 'none' }}
             width={{ base: 'full', md: 'auto' }}
           >
-            <Box display="flex" justifyContent="right" alignItems="center">
+            <Box
+              display="flex"
+              justifyContent="right"
+              alignItems="center"
+              gridGap={2}
+            >
               <GithubIconButton />
               <BlogIconButton />
             </Box>
