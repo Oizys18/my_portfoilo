@@ -77,11 +77,10 @@ const Navbar = ({
         </Stack>
         <Menu>
           <Stack
-            alignItems="right"
-            justifyContent="right"
+            justifyContent="flex-end"
             display={{ base: 'flex', md: 'none' }}
             direction={{ base: 'row', md: 'none' }}
-            width={{ base: 'full', md: 'auto' }}
+            width={{ base: 'full', md: 'none' }}
           >
             <Box
               display="flex"
