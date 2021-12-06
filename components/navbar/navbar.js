@@ -87,7 +87,6 @@ const Navbar = ({
             <MenuButton
               as={IconButton}
               icon={<HamburgerIcon />}
-              justify="right"
               aria-label="Options"
               variant="outline"
               bgColor="lightGray"

@@ -29,6 +29,7 @@ const TimeCard = ({ data, year }) => {
           width={{ base: 'auto', md: '50%' }}
           display="flex"
           flexWrap="wrap"
+          flexDir="column"
         >
           {data.map((value, index) => {
             return <div key={index}>{value.content}</div>

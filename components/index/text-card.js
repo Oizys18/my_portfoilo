@@ -36,6 +36,7 @@ const TextCard = ({ title, duration, description }) => {
           pt={{ base: 3, md: 0 }}
           flexWrap="wrap"
           display="flex"
+          flexDir="column"
         >
           {description.map((value, index) => {
             return (
