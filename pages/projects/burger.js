@@ -18,7 +18,6 @@ const Burger = () => {
         </>
       )
     }
-
     return null
   }
   useEffect(() => {
