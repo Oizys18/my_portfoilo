@@ -19,7 +19,7 @@ const CustomCheckBox = ({
         borderColor={borderColor}
         animate={animate}
         type="checkbox"
-      ></CheckBox>
+      />
     </Wrapper>
   )
 }
