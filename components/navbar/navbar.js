@@ -18,6 +18,7 @@ import AchievementIconButton from './achievement-toggle-button'
 import LocaleToggleButton from './locale-toggle-button'
 import GithubIconButton from './github-button'
 import BlogIconButton from './blog-button'
+import SteamIconButton from './steam-button'
 import Logo from './logo'
 
 const Navbar = ({
@@ -59,6 +60,7 @@ const Navbar = ({
         >
           <GithubIconButton />
           <BlogIconButton />
+          <SteamIconButton />
         </Stack>
         <Stack
           align="right"
@@ -92,6 +94,7 @@ const Navbar = ({
             >
               <GithubIconButton />
               <BlogIconButton />
+              <SteamIconButton />
             </Box>
             <MenuButton
               as={IconButton}
