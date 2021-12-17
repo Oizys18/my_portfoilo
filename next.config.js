@@ -1,6 +1,6 @@
 const path = require('path')
 const { i18n } = require('./next-i18next.config')
-
+// const withPlugins = require('next-compose-plugins')
 module.exports = {
   reactStringMode: true,
   sassOptions: {
@@ -10,5 +10,22 @@ module.exports = {
     // ssr and displayName are configured by default
     styledComponents: true
   },
-  i18n
+  i18n,
+  async headers() {
+    return [
+      {
+        source: '/projects/video',
+        headers: [
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'require-corp'
+          },
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin'
+          }
+        ]
+      }
+    ]
+  }
 }
