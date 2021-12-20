@@ -6,7 +6,7 @@ import TimeInput from '../../components/video-edit/time-input'
 import { useRef, useState, useEffect } from 'react'
 import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg'
 import Loading from '../../components/loading'
-
+import { Box } from '@chakra-ui/react'
 const ffmpeg = createFFmpeg({
   log: true,
   corePath: '/ffmpeg-core/dist/ffmpeg-core.js'
@@ -261,7 +261,7 @@ const Page = ({ setLoading }) => {
     document.getElementById('image-preview').innerHTML = ''
   }
   return (
-    <Wrapper>
+    <Wrapper maxW="container.lg">
       <VideoWrapper>
         <VideoContainer video={video} videoRef={videoRef} videoSrc={videoSrc} />
         {!video && <Button onClick={onInputClick}>Upload</Button>}
@@ -294,7 +294,7 @@ const Page = ({ setLoading }) => {
 }
 export default Loading(Page)
 
-const Wrapper = styled.div`
+const Wrapper = styled(Box)`
   width: 100%;
   height: 100%;
   display: flex;
