@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from './button'
+import { Button } from '@chakra-ui/react'
 import Video from './video'
 
 const VideoContainer = ({ videoRef, videoSrc, setDuration }) => {
