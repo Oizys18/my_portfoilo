@@ -26,9 +26,7 @@ const Page = ({ setLoading }) => {
     eSecond: '00'
   })
   const { sMinute, sSecond, eMinute, eSecond } = inputs
-  console.log(sMinute, sSecond, eMinute, eSecond)
   // 영상 업로드 및 길이 확인
-  console.log(duration)
   useEffect(() => {
     if (video === null) {
       setVideoSrc(null)
@@ -56,7 +54,6 @@ const Page = ({ setLoading }) => {
           setVideo(null)
           return
         }
-        console.log(target_video.duration)
         setDuration(target_video.duration)
         if ('function' === typeof secs) {
           secs = secs(this.duration)
