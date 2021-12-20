@@ -26,8 +26,9 @@ const Page = ({ setLoading }) => {
     eSecond: '00'
   })
   const { sMinute, sSecond, eMinute, eSecond } = inputs
-
+  console.log(sMinute, sSecond, eMinute, eSecond)
   // 영상 업로드 및 길이 확인
+  console.log(duration)
   useEffect(() => {
     if (video === null) {
       setVideoSrc(null)
@@ -43,7 +44,6 @@ const Page = ({ setLoading }) => {
     function getVideoImage(path, secs, callback) {
       var me = this
       var target_video = document.createElement('video')
-
       target_video.onloadedmetadata = function () {
         // 영상 총길이 1시간 이상 일 경우 예외처리
         if (target_video.duration > 3600) {
@@ -56,6 +56,7 @@ const Page = ({ setLoading }) => {
           setVideo(null)
           return
         }
+        console.log(target_video.duration)
         setDuration(target_video.duration)
         if ('function' === typeof secs) {
           secs = secs(this.duration)
@@ -82,10 +83,10 @@ const Page = ({ setLoading }) => {
     }
 
     // secs 초단위 영상 이미지 확인 및 저장
-    function showImageAt(secs) {
+    async function showImageAt(secs) {
       var duration
       getVideoImage(
-        url,
+        await url,
         function (totalTime) {
           duration = totalTime
           return secs
