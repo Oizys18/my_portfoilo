@@ -261,7 +261,7 @@ const Page = ({ setLoading }) => {
     document.getElementById('image-preview').innerHTML = ''
   }
   return (
-    <Wrapper maxW="container.lg">
+    <Wrapper>
       <VideoWrapper>
         <VideoContainer video={video} videoRef={videoRef} videoSrc={videoSrc} />
         {!video && <Button onClick={onInputClick}>Upload</Button>}
