@@ -91,8 +91,10 @@ const Page = ({ setLoading }) => {
         function (img, secs, event) {
           if (event.type == 'seeked') {
             // set img style and append
-            img.style = 'height:200px; object-fit:cover;'
-            document.getElementById('image-preview').appendChild(img)
+            img.style = 'max-height:19vh; object-fit:cover;'
+            if (document.getElementById('image-preview')) {
+              document.getElementById('image-preview').appendChild(img)
+            }
             if (duration >= ++secs) {
               showImageAt(secs)
             }
@@ -261,34 +263,38 @@ const Page = ({ setLoading }) => {
     document.getElementById('image-preview').innerHTML = ''
   }
   return (
-    <Wrapper>
+    <Wrapper maxW={{ md: 'container.2xl', base: 'full' }}>
       <VideoWrapper>
         <VideoContainer video={video} videoRef={videoRef} videoSrc={videoSrc} />
-        {!video && <Button onClick={onInputClick}>Upload</Button>}
+        {!video && <UploadButton onClick={onInputClick}>Upload</UploadButton>}
         <Upload inputRef={inputRef} setVideo={setVideo} />
       </VideoWrapper>
 
       {video && (
         <ControllerWrapper>
-          <StartController>
-            <Button onClick={handleSetStart}>시작</Button>
-            <TimeController>
-              <TimeInput name="sMinute" value={sMinute} onChange={onChange} />
-              <TimeInput name="sSecond" value={sSecond} onChange={onChange} />
-            </TimeController>
-          </StartController>
-          <EndController>
-            <Button onClick={handleSetEnd}>종료</Button>
-            <TimeController>
-              <TimeInput name="eMinute" value={eMinute} onChange={onChange} />
-              <TimeInput name="eSecond" value={eSecond} onChange={onChange} />
-            </TimeController>
-          </EndController>
-          <Button onClick={onExtractClick}>구간저장</Button>
-          <Button onClick={onReset}>재업로드</Button>
+          <TimeContainer>
+            <StartController>
+              <Button onClick={handleSetStart}>시작</Button>
+              <TimeController>
+                <TimeInput name="sMinute" value={sMinute} onChange={onChange} />
+                <TimeInput name="sSecond" value={sSecond} onChange={onChange} />
+              </TimeController>
+            </StartController>
+            <EndController>
+              <Button onClick={handleSetEnd}>종료</Button>
+              <TimeController>
+                <TimeInput name="eMinute" value={eMinute} onChange={onChange} />
+                <TimeInput name="eSecond" value={eSecond} onChange={onChange} />
+              </TimeController>
+            </EndController>
+          </TimeContainer>
+          <ActionContainer>
+            <Button onClick={onExtractClick}>구간저장</Button>
+            <Button onClick={onReset}>재업로드</Button>
+          </ActionContainer>
         </ControllerWrapper>
       )}
-      <PreviewWrapper id="image-preview" />
+      {video && <PreviewWrapper id="image-preview" />}
     </Wrapper>
   )
 }
@@ -303,21 +309,39 @@ const Wrapper = styled(Box)`
   align-items: center;
 `
 
+const TimeContainer = styled(Box)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const ActionContainer = styled(Box)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+`
+const UploadButton = styled(Button)`
+  position: absolute;
+  /* position center of screen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
 const VideoWrapper = styled.div`
-  width: 600px;
-  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 0 100px 0;
+  /* margin: 0 0 20px 0; */
 `
 const ControllerWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  gap: 1em;
+  flex-direction: column;
+  margin-bottom: 20vh;
+  gap: 10px;
 `
 
 const TimeController = styled.div`
@@ -348,7 +372,7 @@ const PreviewWrapper = styled.div`
   align-items: center;
   flex-direction: row;
   background: #222222;
-  overflow-x: scroll;
+  overflow-x: auto;
   width: 100vw;
   bottom: 0;
 `

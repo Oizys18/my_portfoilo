@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-
+import { Box } from '@chakra-ui/react'
 const Video = ({ videoSrc, videoRef }) => {
   return (
-    <Wrapper>
+    <Wrapper maxW="container.xl">
       {videoSrc && (
         <VideoScreen className="video" preload="auto" controls ref={videoRef}>
           <source src={videoSrc} />
@@ -16,12 +16,11 @@ export default Video
 const VideoScreen = styled.video`
   width: 100%;
   height: 100%;
-  min-width: 600px;
-  min-height: 300px;
-  max-height: 500px;
+  max-width: 50vw;
+  max-height: 40vh;
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled(Box)`
   width: 100%;
   height: 100%;
 `
