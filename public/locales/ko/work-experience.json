@@ -1,5 +1,22 @@
 [
   {
+    "title": "Django 공식문서 번역",
+    "duration": null,
+    "description": [
+      "https://docs.djangoproject.com/",
+      "Django 프레임워크 공식문서 로컬라이징 참여"
+    ]
+  },
+  {
+    "title": "취득 자격증",
+    "duration": null,
+    "description": [
+      "2013 자동차 운전면허 1종",
+      "2021 OPIC IH",
+      "2021 정보처리기사"
+    ]
+  },
+  {
     "title": "삼성청년SW아카데미 2기",
     "duration": "2019.07~2020.06",
     "description": [
@@ -32,26 +49,11 @@
   },
   {
     "title": "원밀리언 댄스 스튜디오",
-    "duration": "2022.01 ~",
+    "duration": "2022.01 ~ 재직중",
     "description": [
-      "프론트엔드 개발자"
-    ]
-  },
-  {
-    "title": "Django 공식문서 번역",
-    "duration": null,
-    "description": [
-      "https://docs.djangoproject.com/",
-      "Django 프레임워크 공식문서 로컬라이징 참여"
-    ]
-  },
-  {
-    "title": "취득 자격증",
-    "duration": null,
-    "description": [
-      "2013 자동차 운전면허 1종",
-      "2021 OPIC IH",
-      "2021 정보처리기사"
+      "프론트엔드 개발자",
+      "동영상 라이브 스트리밍 서비스 개발",
+      "웹사이트 개발"
     ]
   }
 ]

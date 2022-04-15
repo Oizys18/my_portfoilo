@@ -1,5 +1,22 @@
 [
   {
+    "title": "Django project localization",
+    "duration": null,
+    "description": [
+      "https://docs.djangoproject.com/",
+      "Contributed to Django Framework documentation localization"
+    ]
+  },
+  {
+    "title": "Certificates",
+    "duration": null,
+    "description": [
+      "2013 Driver license",
+      "2021 OPIC IH(English Speaking)",
+      "2021 Engineer Information Processing"
+    ]
+  },
+  {
     "title": "Samsung SW Academy",
     "duration": "2019.07~2020.06",
     "description": [
@@ -32,26 +49,11 @@
   },
   {
     "title": "1 Million Dance Studio",
-    "duration": "2022.01 ~",
+    "duration": "2022.01 ~ working",
     "description": [
-      "Frontend developer"
-    ]
-  },
-  {
-    "title": "Django project localization",
-    "duration": null,
-    "description": [
-      "https://docs.djangoproject.com/",
-      "Contributed to Django Framework documentation localization"
-    ]
-  },
-  {
-    "title": "Certificates",
-    "duration": null,
-    "description": [
-      "2013 Driver license",
-      "2021 OPIC IH(English Speaking)",
-      "2021 Engineer Information Processing"
+      "Frontend developer",
+      "Live streaming platform for dance classes",
+      "ReactJS website"
     ]
   }
 ]
