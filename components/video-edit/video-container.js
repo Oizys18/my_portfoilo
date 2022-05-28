@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1em;
+  border-radius: 30px;
 `
 const VideoView = styled.div`
   display: flex;
