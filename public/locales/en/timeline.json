@@ -69,5 +69,14 @@
 				"type": "solo"
 			}
 		]
+	},
+	{
+		"year":2022,
+		"data":[
+			{
+				"content": "Joined 1 Million Dance Studio",
+				"type": "team"
+			}
+		]
 	}
 ]

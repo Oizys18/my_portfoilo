@@ -18,18 +18,18 @@ const TimeInput = ({ name, value, onChange }) => {
 export default TimeInput
 
 const CustomInput = styled.input`
-  width: 60px;
-  height: 100%;
-  border: 1px solid black;
-  border-radius: 0;
-  border-bottom: 1px solid #ccc;
+  all: unset;
+  /* width: 40px; */
+  border: 2px solid black;
+  border-radius: 5px;
   text-align: center;
-  padding: 0;
-  font-size: 1.5rem;
+  padding: 2px 5px;
+  font-size: 1.1rem;
+  margin: 2px;
   color: #333;
   background-color: #fff;
   outline: none;
   &:focus {
-    border-bottom: 1px solid #000;
+    border: 2px solid green;
   }
 `

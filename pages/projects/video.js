@@ -10,7 +10,6 @@ import { Box } from '@chakra-ui/react'
 const ffmpeg = createFFmpeg({
   log: true,
   corePath: '/ffmpeg-core/dist/ffmpeg-core.js'
-  // corePath: "./node_modules/@ffmpeg/core/ffmpeg-core.js",
 })
 
 const Page = ({ setLoading }) => {
@@ -274,16 +273,22 @@ const Page = ({ setLoading }) => {
         <ControllerWrapper>
           <TimeContainer>
             <StartController>
-              <Button onClick={handleSetStart}>시작</Button>
+              <Button width={100} onClick={handleSetStart}>
+                시작
+              </Button>
               <TimeController>
                 <TimeInput name="sMinute" value={sMinute} onChange={onChange} />
+                {':'}
                 <TimeInput name="sSecond" value={sSecond} onChange={onChange} />
               </TimeController>
             </StartController>
             <EndController>
-              <Button onClick={handleSetEnd}>종료</Button>
+              <Button width={100} onClick={handleSetEnd}>
+                종료
+              </Button>
               <TimeController>
                 <TimeInput name="eMinute" value={eMinute} onChange={onChange} />
+                {':'}
                 <TimeInput name="eSecond" value={eSecond} onChange={onChange} />
               </TimeController>
             </EndController>
@@ -313,6 +318,11 @@ const TimeContainer = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 50px;
+  /* border-style: dashed; */
+  border: 2px dashed black;
+  border-radius: 10px;
+  padding: 30px;
 `
 
 const ActionContainer = styled(Box)`
@@ -355,6 +365,7 @@ const StartController = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
   gap: 1em;
 `
 

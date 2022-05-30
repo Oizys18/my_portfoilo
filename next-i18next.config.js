@@ -8,11 +8,11 @@ module.exports = {
     },
     domains: [
       {
-        domain: 'oizys18.netlify.com',
+        domain: 'oizys18.vercel.app',
         defaultLocale: 'ko'
       },
       {
-        domain: 'oizys18.netlify.com',
+        domain: 'oizys18.vercel.app',
         defaultLocale: 'en'
       }
     ]
