@@ -358,7 +358,6 @@ const TimeController = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 200px; */
 `
 
 const StartController = styled.div`
