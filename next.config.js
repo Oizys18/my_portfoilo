@@ -14,7 +14,20 @@ module.exports = {
   async headers() {
     return [
       {
-        source: ['/projects/video', '/en/projects/video'],
+        source: '/projects/video',
+        headers: [
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'require-corp'
+          },
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin'
+          }
+        ]
+      },
+      {
+        source: '/en/projects/video',
         headers: [
           {
             key: 'Cross-Origin-Embedder-Policy',
