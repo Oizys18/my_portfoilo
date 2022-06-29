@@ -12,11 +12,11 @@ const Main = ({ children, router }) => {
     onOpen: onTerminalOpen,
     onClose: onTerminalClose
   } = useDisclosure()
-  const {
-    isOpen: isAchievementOpen,
-    onOpen: onAchievementOpen,
-    onClose: onAchievementClose
-  } = useDisclosure()
+  // const {
+  //   isOpen: isAchievementOpen,
+  //   onOpen: onAchievementOpen,
+  //   onClose: onAchievementClose
+  // } = useDisclosure()
 
   return (
     <Box as="main">
@@ -29,19 +29,19 @@ const Main = ({ children, router }) => {
         path={router.asPath}
         onTerminalOpen={onTerminalOpen}
         isTerminalOpen={isTerminalOpen}
-        onAchievementOpen={onAchievementOpen}
-        isAchievementOpen={isAchievementOpen}
+        // onAchievementOpen={onAchievementOpen}
+        // isAchievementOpen={isAchievementOpen}
       />
       <Drawer placement="top" isOpen={isTerminalOpen} onClose={onTerminalClose}>
         <DynamicTerminal closeTerminal={onTerminalClose} />
       </Drawer>
-      <Drawer
+      {/* <Drawer
         isOpen={isAchievementOpen}
         onClose={onAchievementClose}
         placement="left"
       >
         <div>도전과제기능 업데이트 예정!</div>
-      </Drawer>
+      </Drawer> */}
       <Box pt={16}>{children}</Box>
     </Box>
   )

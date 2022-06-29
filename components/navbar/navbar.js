@@ -5,7 +5,7 @@ import {
   Link,
   Stack,
   Menu,
-  MenuItem,
+  // MenuItem,
   MenuList,
   MenuButton,
   IconButton,
@@ -22,7 +22,7 @@ import SteamIconButton from './steam-button'
 import Logo from './logo'
 
 const Navbar = ({
-  path,
+  // path,
   onTerminalOpen,
   isTerminalOpen,
   onAchievementOpen,
@@ -71,10 +71,10 @@ const Navbar = ({
           mt={{ base: 4, nmd: 0 }}
         >
           <LocaleToggleButton />
-          <AchievementIconButton
+          {/* <AchievementIconButton
             isOpen={isAchievementOpen}
             onOpen={onAchievementOpen}
-          />
+          /> */}
           <ThemeToggleButton />
           <OpenTerminalButton isOpen={isTerminalOpen} onOpen={onTerminalOpen} />
         </Stack>
@@ -114,10 +114,10 @@ const Navbar = ({
               width={{ base: 'full', md: 'auto' }}
             >
               <LocaleToggleButton />
-              <AchievementIconButton
+              {/* <AchievementIconButton
                 isOpen={isAchievementOpen}
                 onOpen={onAchievementOpen}
-              />
+              /> */}
               <ThemeToggleButton />
               <OpenTerminalButton onOpen={onTerminalOpen} />
             </Stack>
